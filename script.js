@@ -1,5 +1,17 @@
 const header = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll(".reveal");
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+if (heroSlides.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let activeHeroSlide = 0;
+
+  window.setInterval(() => {
+    heroSlides[activeHeroSlide].classList.remove("is-active");
+    activeHeroSlide = (activeHeroSlide + 1) % heroSlides.length;
+    heroSlides[activeHeroSlide].classList.add("is-active");
+  }, 4200);
+}
+
 const rawCatalogue = {
   "Dermal Filler": [
     "Juvelook",
