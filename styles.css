@@ -383,6 +383,16 @@ p {
     transform 1200ms ease;
 }
 
+.hero-slide::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(2, 24, 23, 0.58), transparent 55%),
+    linear-gradient(0deg, rgba(2, 24, 23, 0.58), transparent 48%);
+  content: "";
+  pointer-events: none;
+}
+
 .hero-slide.is-active {
   opacity: 1;
   transform: scale(1);
@@ -427,18 +437,93 @@ p {
 
 .hero-slide figcaption {
   position: absolute;
-  left: 22px;
-  bottom: 22px;
+  left: clamp(18px, 4vw, 44px);
+  bottom: clamp(54px, 8vw, 86px);
   z-index: 3;
-  max-width: calc(100% - 44px);
-  padding: 10px 14px;
-  border: 1px solid rgba(216, 173, 71, 0.5);
-  border-radius: 999px;
+  display: grid;
+  gap: 8px;
+  max-width: min(420px, calc(100% - 44px));
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   color: #fff8df;
+  background: transparent;
+  transform: translateY(18px);
+  opacity: 0;
+  transition:
+    opacity 760ms ease 220ms,
+    transform 760ms ease 220ms;
+}
+
+.hero-slide.is-active figcaption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-slide figcaption strong {
+  color: var(--gold-light);
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 950;
+  line-height: 1.05;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+}
+
+.hero-slide figcaption span {
+  width: fit-content;
+  padding: 9px 13px;
+  border: 1px solid rgba(216, 173, 71, 0.52);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
   font-size: 13px;
   font-weight: 850;
   background: rgba(2, 24, 23, 0.72);
   backdrop-filter: blur(12px);
+}
+
+.hero-slider-dots {
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-slider-dots button {
+  width: 34px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid rgba(216, 173, 71, 0.62);
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-slider-dots button.is-active {
+  background: var(--gold-light);
+  box-shadow: 0 0 22px rgba(255, 226, 138, 0.58);
+}
+
+.hero-slide-progress {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 4;
+  width: min(180px, 32%);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-slide-progress::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  animation: slideProgress 4.2s linear infinite;
+  content: "";
 }
 
 .orbit {
@@ -467,8 +552,9 @@ p {
 .floating-card {
   position: absolute;
   right: 24px;
-  bottom: 24px;
-  z-index: 3;
+  top: 24px;
+  bottom: auto;
+  z-index: 4;
   display: grid;
   gap: 4px;
   min-width: 230px;
@@ -1195,12 +1281,22 @@ td strong {
   }
 }
 
+@keyframes slideProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-media,
   .glow-ring,
   .spark,
   .orbit,
-  .marquee-track {
+  .marquee-track,
+  .hero-slide-progress::before {
     animation: none;
   }
 
