@@ -8,7 +8,33 @@
       name="description"
       content="Website chinh thuc cua Sowena Beauty Global - san pham tham my va giai phap lam dep cao cap."
     />
+    <meta property="og:title" content="Sowena Beauty Global" />
+    <meta
+      property="og:description"
+      content="Premium aesthetic solutions, authentic beauty products and trusted partner support."
+    />
+    <meta property="og:url" content="https://www.sowenabeauty.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sowena Beauty Global",
+        "url": "https://www.sowenabeauty.com",
+        "logo": "https://www.sowenabeauty.com/assets/sowena-logo-transparent.png",
+        "sameAs": ["https://www.facebook.com/sowenabeautyglobal/"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "contact@sowenabeauty.com",
+            "areaServed": "VN"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="top-strip">
@@ -31,6 +57,7 @@
         <a href="#about">Thuong hieu</a>
         <a href="#products">San pham</a>
         <a href="#routine">Giai phap</a>
+        <a href="#social">Social</a>
         <a href="#contact">Lien he</a>
       </nav>
 
@@ -91,8 +118,8 @@
       <section id="about" class="split-section">
         <div class="image-panel logo-panel">
           <img
-            src="./assets/sowena-logo.png"
-            alt="Sowena gold logo"
+            src="./assets/sowena-logo-transparent.png"
+            alt="Sowena gold logo transparent"
           />
         </div>
         <div class="split-copy">
@@ -171,6 +198,45 @@
         <a class="button primary" href="#contact">Bat dau tu van</a>
       </section>
 
+      <section id="social" class="social-section">
+        <div class="section-heading">
+          <p class="eyebrow">Official channels</p>
+          <h2>Ket noi voi he sinh thai Sowena</h2>
+          <p>
+            Cac kenh duoi day duoc gan vao website de khach hang co the truy
+            cap nhanh den fanpage, Messenger va kenh lien he chinh thuc.
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <a
+            class="social-card"
+            href="https://www.facebook.com/sowenabeautyglobal/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Facebook</span>
+            <strong>Sowena Beauty Global</strong>
+            <small>Fanpage chinh thuc</small>
+          </a>
+          <a
+            class="social-card"
+            href="https://m.me/sowenabeautyglobal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Messenger</span>
+            <strong>Chat voi Sowena</strong>
+            <small>Tu van nhanh qua Facebook</small>
+          </a>
+          <a class="social-card" href="mailto:contact@sowenabeauty.com">
+            <span>Email</span>
+            <strong>contact@sowenabeauty.com</strong>
+            <small>Ho tro hop tac va khach hang</small>
+          </a>
+        </div>
+      </section>
+
       <section id="contact" class="contact-section">
         <div>
           <p class="eyebrow">Lien he</p>
@@ -184,6 +250,12 @@
           <p><strong>Email:</strong> contact@sowenabeauty.com</p>
           <p><strong>Website:</strong> www.sowenabeauty.com</p>
           <p><strong>Hotline:</strong> 0900 000 000</p>
+          <p>
+            <strong>Facebook:</strong>
+            <a href="https://www.facebook.com/sowenabeautyglobal/" target="_blank" rel="noopener noreferrer">
+              facebook.com/sowenabeautyglobal
+            </a>
+          </p>
           <a class="button primary" href="mailto:contact@sowenabeauty.com">
             Gui email
           </a>
@@ -192,10 +264,16 @@
     </main>
 
     <footer class="site-footer">
+      <a class="footer-brand" href="#home" aria-label="Sowena Beauty Global">
+        <img src="./assets/sowena-logo-transparent.png" alt="Sowena logo" />
+      </a>
       <p>© 2026 Sowena Beauty Global. All rights reserved.</p>
       <div>
         <a href="#about">Thuong hieu</a>
         <a href="#products">San pham</a>
+        <a href="https://www.facebook.com/sowenabeautyglobal/" target="_blank" rel="noopener noreferrer">
+          Facebook
+        </a>
         <a href="#contact">Lien he</a>
       </div>
     </footer>
