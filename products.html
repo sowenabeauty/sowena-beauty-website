@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sowena Beauty Global | Product Catalogue</title>
+    <meta
+      name="description"
+      content="Catalogue san pham Sowena Beauty Global - loc theo danh muc, thuong hieu, xuat xu va gui yeu cau bao gia."
+    />
+    <meta property="og:title" content="Sowena Beauty Global Product Catalogue" />
+    <meta
+      property="og:description"
+      content="Browse premium aesthetic products and request a product quotation from Sowena Beauty Global."
+    />
+    <meta property="og:url" content="https://www.sowenabeauty.com/products.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="catalogue-page">
+    <div class="top-strip">
+      <div>
+        <span>Premium Aesthetic Solutions</span>
+        <span>Authentic</span>
+        <span>Trusted</span>
+      </div>
+      <a href="mailto:sowenabeauty.support@gmail.com">sowenabeauty.support@gmail.com</a>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Sowena Beauty Global">
+        <img
+          class="brand-logo"
+          src="./assets/sowena-avatar.jpg"
+          alt="Sowena logo"
+        />
+        <span>Sowena Beauty</span>
+      </a>
+
+      <nav class="nav" aria-label="Dieu huong chinh">
+        <a href="./index.html">Trang chu</a>
+        <a href="./index.html#about">Thuong hieu</a>
+        <a class="active" href="./products.html">San pham</a>
+        <a href="./index.html#routine">Giai phap</a>
+        <a href="./index.html#social">Social</a>
+        <a href="./index.html#contact">Lien he</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://www.instagram.com/sowena_beauty" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.tiktok.com/@sowena.beauty" target="_blank" rel="noopener noreferrer">TT</a>
+        <a class="header-cta" href="mailto:sowenabeauty.support@gmail.com">Bao gia</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="catalogue-hero">
+        <div class="hero-bg-motion" aria-hidden="true">
+          <span class="glow-ring ring-one"></span>
+          <span class="glow-ring ring-two"></span>
+          <span class="spark spark-one"></span>
+          <span class="spark spark-two"></span>
+          <span class="spark spark-three"></span>
+        </div>
+        <div class="catalogue-hero-copy reveal">
+          <p class="eyebrow">Product Catalogue</p>
+          <h1>Find products. Build one quote.</h1>
+          <p>
+            Tim kiem theo ten san pham, danh muc, thuong hieu hoac xuat xu.
+            Chon cac san pham can quan tam va gui mot yeu cau bao gia duy nhat
+            den Sowena Beauty Global.
+          </p>
+        </div>
+      </section>
+
+      <section class="catalogue-content">
+        <div class="moq-banner reveal">
+          <div>
+            <p class="eyebrow">Simple wholesale ordering</p>
+            <h2>Dat yeu cau nhanh cho nhom san pham tham my</h2>
+            <div class="moq-banner-pills">
+              <span>Authentic product focus</span>
+              <span>Mixed product requests</span>
+              <span>Partner support</span>
+              <span>B2B pricing on request</span>
+            </div>
+          </div>
+          <a class="button primary" href="mailto:sowenabeauty.support@gmail.com?subject=Sowena%20product%20quotation%20request">
+            Gui yeu cau bao gia
+          </a>
+        </div>
+
+        <div class="product-filter-panel reveal">
+          <div class="filter-panel-head">
+            <div>
+              <p class="eyebrow">Smart catalogue filter</p>
+              <h2>Find the right product faster</h2>
+            </div>
+            <button class="clear-filters" data-clear-filters type="button">Reset all</button>
+          </div>
+
+          <div class="product-tools">
+            <label class="search-field">
+              <span>Search</span>
+              <input
+                class="input"
+                data-search
+                placeholder="Search product, brand, category or origin..."
+              />
+            </label>
+            <label>
+              <span>Category</span>
+              <select class="select" data-category-filter></select>
+            </label>
+            <label>
+              <span>Brand</span>
+              <select class="select" data-brand-filter></select>
+            </label>
+            <label>
+              <span>Origin</span>
+              <select class="select" data-origin-filter></select>
+            </label>
+          </div>
+
+          <div class="quick-filters" aria-label="Quick filters">
+            <button type="button" data-quick-filter="All">All products</button>
+            <button type="button" data-quick-filter="Dermal Filler">Dermal fillers</button>
+            <button type="button" data-quick-filter="Skin Booster">Skin boosters</button>
+            <button type="button" data-quick-filter="Toxin">Toxins</button>
+            <button type="button" data-quick-filter="Biostimulator">Biostimulators</button>
+            <button type="button" data-quick-filter="Injection Supply">Injection supplies</button>
+          </div>
+
+          <div class="results-bar">
+            <span data-results-count></span>
+            <div class="active-filters" data-active-filters></div>
+          </div>
+        </div>
+
+        <div class="products-catalogue-grid" data-products-grid></div>
+
+        <div class="table-section">
+          <div class="section-heading">
+            <p class="eyebrow">Table view</p>
+            <h2>Quick product overview</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Brand</th>
+                  <th>Origin</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody data-products-table></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="quote-drawer" data-quote-drawer>
+      <div>
+        <strong><span data-quote-count>0</span> products selected</strong>
+        <span class="quote-hint">Send selected list by email</span>
+      </div>
+      <a class="button primary disabled" data-send-quote href="mailto:sowenabeauty.support@gmail.com">
+        Send quote list
+      </a>
+    </aside>
+
+    <a class="floating-email" href="mailto:sowenabeauty.support@gmail.com">EMAIL</a>
+  </body>
+</html>
