@@ -345,12 +345,12 @@ const updateQuoteDrawer = () => {
   if (!quoteCount || !sendQuote) return;
   quoteCount.textContent = selectedProducts.size;
   const selected = products.filter((product) => selectedProducts.has(productId(product)));
-  const body = selected.map((product) => `- ${product.name} (${product.brand}, ${product.category})`).join("%0D%0A");
+  const body = selected.map((product) => `- ${product.name} (${product.brand}, ${product.category})`).join("%0A");
   sendQuote.classList.toggle("disabled", selected.length === 0);
   sendQuote.href =
     selected.length === 0
-      ? "mailto:sowenabeauty.support@gmail.com"
-      : `mailto:sowenabeauty.support@gmail.com?subject=Sowena%20product%20quotation%20request&body=Hello%20Sowena%20Beauty%2C%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%3A%0D%0A${body}`;
+      ? "https://wa.me/821032577559"
+      : `https://wa.me/821032577559?text=Hello%20Sowena%20Beauty%2C%0AI%20would%20like%20to%20request%20a%20quotation%20for%3A%0A${body}`;
 };
 
 const toggleProduct = (id) => {
