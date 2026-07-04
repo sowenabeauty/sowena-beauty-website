@@ -459,6 +459,12 @@ p {
   color: var(--ink);
 }
 
+.contact-box a {
+  color: var(--teal);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -482,6 +488,7 @@ p {
 }
 
 .site-footer div {
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--gold-light);
   font-size: 14px;
