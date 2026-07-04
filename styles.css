@@ -583,38 +583,98 @@ p {
   font-size: 14px;
 }
 
-.marquee-strip {
+.brand-marquee-section {
   overflow: hidden;
-  border-block: 1px solid rgba(216, 173, 71, 0.24);
-  background: linear-gradient(90deg, #031f1d, #075a55, #031f1d);
+  padding: 42px 0 38px;
+  border-bottom: 1px solid rgba(7, 72, 68, 0.12);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(216, 173, 71, 0.09), transparent 34%),
+    #fffef9;
+  text-align: center;
 }
 
-.marquee-track {
+.section-kicker {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-marquee-section h2 {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  padding: 0 18px;
+  color: var(--teal-dark);
+  font-size: clamp(28px, 3.2vw, 46px);
+}
+
+.brand-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.brand-marquee::before,
+.brand-marquee::after {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: min(120px, 14vw);
+  height: 100%;
+  content: "";
+  pointer-events: none;
+}
+
+.brand-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #fffef9, rgba(255, 254, 249, 0));
+}
+
+.brand-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #fffef9, rgba(255, 254, 249, 0));
+}
+
+.brand-marquee-track {
   display: flex;
   width: max-content;
-  gap: 34px;
-  padding: 18px 0;
-  color: var(--gold-light);
-  font-size: clamp(18px, 2vw, 28px);
+  align-items: center;
+  gap: clamp(48px, 7vw, 112px);
+  animation: brandLogoScroll 34s linear infinite;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  color: rgba(7, 72, 68, 0.48);
+  font-size: clamp(26px, 3vw, 46px);
   font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
-  animation: marqueeX 24s linear infinite;
+  filter: grayscale(1);
+  opacity: 0.82;
+  transition: color 220ms ease, opacity 220ms ease, transform 220ms ease;
 }
 
-.marquee-track span {
-  display: inline-flex;
-  align-items: center;
-  gap: 34px;
+.brand-wordmark:hover {
+  color: var(--teal);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
-.marquee-track span::after {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 18px rgba(255, 226, 138, 0.74);
-  content: "";
+.brand-script {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .service-row {
@@ -1281,7 +1341,7 @@ td strong {
   }
 }
 
-@keyframes marqueeX {
+@keyframes brandLogoScroll {
   from {
     transform: translateX(0);
   }
@@ -1304,7 +1364,7 @@ td strong {
   .glow-ring,
   .spark,
   .orbit,
-  .marquee-track,
+  .brand-marquee-track,
   .hero-slide-progress::before {
     animation: none;
   }
