@@ -17,6 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -50,8 +51,12 @@
   </head>
   <body>
     <div class="top-strip">
-      <span>Premium Aesthetic Solutions | Authentic | Trusted</span>
-      <span>sowenabeauty.support@gmail.com</span>
+      <div>
+        <span>Premium Aesthetic Solutions</span>
+        <span>Authentic</span>
+        <span>Trusted</span>
+      </div>
+      <a href="mailto:sowenabeauty.support@gmail.com">sowenabeauty.support@gmail.com</a>
     </div>
 
     <header class="site-header">
@@ -73,12 +78,28 @@
         <a href="#contact">Lien he</a>
       </nav>
 
-      <a class="header-cta" href="#contact">Tu van</a>
+      <div class="header-actions">
+        <a href="https://www.instagram.com/sowena_beauty" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.tiktok.com/@sowena.beauty" target="_blank" rel="noopener noreferrer">TT</a>
+        <a class="header-cta" href="#contact">Tu van</a>
+      </div>
     </header>
 
     <main id="home">
       <section class="hero">
-        <div class="hero-copy">
+        <div class="hero-bg-motion" aria-hidden="true">
+          <span class="glow-ring ring-one"></span>
+          <span class="glow-ring ring-two"></span>
+          <span class="spark spark-one"></span>
+          <span class="spark spark-two"></span>
+          <span class="spark spark-three"></span>
+        </div>
+
+        <div class="hero-copy reveal">
+          <div class="hero-badge">
+            <span></span>
+            Seoul • Korea • Global Beauty
+          </div>
           <p class="eyebrow">Premium Aesthetic Solutions</p>
           <h1>Authentic beauty products for professional care</h1>
           <p>
@@ -90,9 +111,26 @@
             <a class="button primary" href="#products">Kham pha san pham</a>
             <a class="button secondary" href="#contact">Lien he hop tac</a>
           </div>
+
+          <div class="hero-metrics" aria-label="Sowena trust indicators">
+            <div>
+              <strong>Premium</strong>
+              <span>Quality</span>
+            </div>
+            <div>
+              <strong>Authentic</strong>
+              <span>Products</span>
+            </div>
+            <div>
+              <strong>Trusted</strong>
+              <span>Partner</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-media" aria-label="Sowena product display">
+        <div class="hero-media reveal reveal-delay" aria-label="Sowena product display">
+          <span class="orbit orbit-one"></span>
+          <span class="orbit orbit-two"></span>
           <img
             src="./assets/sowena-hero.png"
             alt="Sowena Beauty premium aesthetic products"
@@ -105,22 +143,22 @@
       </section>
 
       <section class="service-row" aria-label="Loi ich dich vu">
-        <article>
+        <article class="reveal">
           <span>01</span>
           <h3>Premium quality</h3>
           <p>Tap trung vao san pham tham my va skincare cao cap.</p>
         </article>
-        <article>
+        <article class="reveal">
           <span>02</span>
           <h3>Safe & trusted</h3>
           <p>Thong tin minh bach de khach hang de tiep can va tu van.</p>
         </article>
-        <article>
+        <article class="reveal">
           <span>03</span>
           <h3>Advanced solutions</h3>
           <p>Bo cuc san sang cho nhom giai phap tham my chuyen sau.</p>
         </article>
-        <article>
+        <article class="reveal">
           <span>04</span>
           <h3>Proven results</h3>
           <p>Phu hop de mo rong catalog, dai ly va noi dung thuong hieu.</p>
