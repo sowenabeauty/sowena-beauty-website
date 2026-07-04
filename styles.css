@@ -1,14 +1,16 @@
 :root {
-  --ink: #171313;
-  --muted: #716566;
-  --line: #eadfda;
+  --ink: #092523;
+  --muted: #587471;
+  --line: rgba(206, 173, 94, 0.32);
   --surface: #ffffff;
-  --soft: #f8efec;
-  --rose: #9c514a;
-  --rose-dark: #6c302f;
-  --sage: #6c806e;
-  --gold: #c6a265;
-  --cream: #fff9f4;
+  --soft: #ecf8f5;
+  --teal: #006b67;
+  --teal-dark: #003734;
+  --teal-deep: #062624;
+  --aqua: #10c4bd;
+  --gold: #d8ad47;
+  --gold-light: #ffe28a;
+  --cream: #f9f4e8;
 }
 
 * {
@@ -25,7 +27,7 @@ body {
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background: var(--cream);
+  background: var(--teal-deep);
 }
 
 img {
@@ -45,7 +47,9 @@ a {
   padding: 10px clamp(18px, 5vw, 72px);
   color: #fff;
   font-size: 13px;
-  background: var(--rose-dark);
+  background:
+    linear-gradient(90deg, rgba(0, 55, 52, 0.96), rgba(0, 107, 103, 0.94)),
+    var(--teal-dark);
 }
 
 .site-header {
@@ -56,9 +60,9 @@ a {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
-  padding: 18px clamp(18px, 5vw, 72px);
+  padding: 14px clamp(18px, 5vw, 72px);
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 249, 244, 0.94);
+  background: rgba(6, 38, 36, 0.94);
   backdrop-filter: blur(14px);
 }
 
@@ -72,44 +76,48 @@ a {
 
 .brand {
   gap: 10px;
+  color: var(--gold-light);
   font-weight: 800;
 }
 
-.brand-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  color: #fff;
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
   border-radius: 50%;
-  background: var(--rose-dark);
+  box-shadow: 0 0 0 1px rgba(216, 173, 71, 0.45), 0 0 22px rgba(16, 196, 189, 0.22);
 }
 
 .nav {
   justify-content: center;
   gap: 24px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 14px;
+}
+
+.nav a:hover {
+  color: var(--gold-light);
 }
 
 .header-cta {
   min-height: 40px;
   padding: 10px 18px;
-  color: #fff;
+  color: var(--teal-dark);
   border-radius: 999px;
   font-weight: 800;
-  background: var(--sage);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
   padding: 68px clamp(18px, 5vw, 72px) 56px;
   background:
-    linear-gradient(115deg, rgba(255, 249, 244, 0.98), rgba(248, 239, 236, 0.76)),
-    radial-gradient(circle at 20% 20%, rgba(198, 162, 101, 0.18), transparent 28%);
+    radial-gradient(circle at 78% 24%, rgba(16, 196, 189, 0.26), transparent 30%),
+    radial-gradient(circle at 18% 26%, rgba(216, 173, 71, 0.2), transparent 24%),
+    linear-gradient(135deg, #062624 0%, #074844 48%, #021817 100%);
 }
 
 .hero-copy {
@@ -118,7 +126,7 @@ a {
 
 .eyebrow {
   margin: 0 0 12px;
-  color: var(--rose-dark);
+  color: var(--gold);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0;
@@ -134,12 +142,14 @@ p {
 
 h1 {
   margin-bottom: 22px;
+  color: #fff8df;
   font-size: clamp(44px, 7vw, 82px);
   line-height: 0.98;
 }
 
 h2 {
   margin-bottom: 16px;
+  color: var(--teal-dark);
   font-size: clamp(30px, 4vw, 52px);
   line-height: 1.08;
 }
@@ -155,6 +165,7 @@ p {
 }
 
 .hero-copy p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.78);
   font-size: 18px;
 }
 
@@ -170,27 +181,29 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0 22px;
-  border: 1px solid var(--rose);
+  border: 1px solid var(--gold);
   border-radius: 6px;
   font-weight: 850;
 }
 
 .button.primary {
-  color: #fff;
-  background: var(--rose);
+  color: var(--teal-dark);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  box-shadow: 0 12px 26px rgba(216, 173, 71, 0.22);
 }
 
 .button.secondary {
-  color: var(--rose-dark);
-  background: rgba(255, 255, 255, 0.46);
+  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hero-media {
   position: relative;
   min-height: 520px;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 24px 60px rgba(72, 38, 35, 0.16);
+  border: 1px solid rgba(216, 173, 71, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
 }
 
 .hero-media img {
@@ -198,6 +211,7 @@ p {
   height: 100%;
   min-height: 520px;
   object-fit: cover;
+  object-position: center;
 }
 
 .floating-card {
@@ -208,14 +222,18 @@ p {
   gap: 4px;
   min-width: 230px;
   padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(216, 173, 71, 0.55);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(2, 24, 23, 0.78);
   backdrop-filter: blur(16px);
 }
 
+.floating-card strong {
+  color: var(--gold-light);
+}
+
 .floating-card span {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 14px;
 }
 
@@ -224,7 +242,7 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #fff;
+  background: #fffaf0;
 }
 
 .service-row article {
@@ -250,7 +268,7 @@ p {
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
   padding: 86px clamp(18px, 5vw, 72px);
-  background: #fff;
+  background: #fffaf0;
 }
 
 .image-panel {
@@ -262,6 +280,24 @@ p {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+.logo-panel {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  padding: 36px;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(16, 196, 189, 0.36), transparent 28%),
+    radial-gradient(circle at 78% 64%, rgba(216, 173, 71, 0.22), transparent 28%),
+    linear-gradient(135deg, #031917, #07514d);
+}
+
+.logo-panel img {
+  aspect-ratio: auto;
+  max-height: 360px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 42px rgba(0, 0, 0, 0.36));
 }
 
 .split-copy {
@@ -280,8 +316,8 @@ p {
   padding-left: 28px;
   color: var(--muted);
   background:
-    linear-gradient(var(--sage), var(--sage)) 0 10px / 14px 2px no-repeat,
-    linear-gradient(var(--sage), var(--sage)) 6px 4px / 2px 14px no-repeat;
+    linear-gradient(var(--gold), var(--gold)) 0 10px / 14px 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 6px 4px / 2px 14px no-repeat;
 }
 
 .section {
@@ -289,7 +325,9 @@ p {
 }
 
 .section.muted {
-  background: var(--soft);
+  background:
+    linear-gradient(180deg, rgba(236, 248, 245, 0.94), rgba(249, 244, 232, 0.98)),
+    var(--soft);
 }
 
 .section-heading {
@@ -307,7 +345,7 @@ p {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: #fffaf0;
 }
 
 .product-card img {
@@ -322,7 +360,7 @@ p {
 
 .product-category {
   margin-bottom: 8px;
-  color: var(--sage);
+  color: var(--teal);
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
@@ -331,7 +369,7 @@ p {
 .product-card a {
   display: inline-block;
   margin-top: 10px;
-  color: var(--rose-dark);
+  color: var(--teal);
   font-weight: 850;
 }
 
@@ -343,9 +381,8 @@ p {
   padding: 78px clamp(18px, 5vw, 72px);
   color: #fff;
   background:
-    linear-gradient(90deg, rgba(108, 48, 47, 0.96), rgba(108, 48, 47, 0.72)),
-    url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80")
-      center / cover;
+    linear-gradient(90deg, rgba(3, 25, 23, 0.96), rgba(0, 107, 103, 0.58)),
+    url("./assets/sowena-hero.png") center / cover;
 }
 
 .banner-section h2,
@@ -360,14 +397,16 @@ p {
 
 .contact-section {
   align-items: start;
-  background: var(--cream);
+  background:
+    radial-gradient(circle at 14% 8%, rgba(216, 173, 71, 0.18), transparent 26%),
+    var(--cream);
 }
 
 .contact-box {
   padding: 30px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: #fffaf0;
 }
 
 .contact-box strong {
@@ -380,17 +419,18 @@ p {
   gap: 18px;
   padding: 30px clamp(18px, 5vw, 72px);
   border-top: 1px solid var(--line);
-  background: #fff;
+  background: var(--teal-deep);
 }
 
 .site-footer p {
   margin: 0;
+  color: rgba(255, 255, 255, 0.72);
   font-size: 14px;
 }
 
 .site-footer div {
   gap: 18px;
-  color: var(--muted);
+  color: var(--gold-light);
   font-size: 14px;
 }
 
