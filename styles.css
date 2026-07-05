@@ -310,12 +310,13 @@ a {
 
 .hero {
   position: relative;
-  min-height: 760px;
+  min-height: 820px;
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.05fr);
-  gap: clamp(34px, 6vw, 92px);
+  grid-template-columns: minmax(360px, 0.86fr) minmax(520px, 1.14fr);
+  grid-template-rows: minmax(520px, auto) auto;
+  gap: clamp(28px, 4.2vw, 72px) clamp(34px, 5vw, 86px);
   align-items: center;
-  padding: 74px clamp(18px, 7vw, 96px) 156px;
+  padding: 92px clamp(14px, 3.2vw, 58px) 124px;
   background:
     radial-gradient(circle at 12% 82%, rgba(255, 255, 255, 0.62), transparent 18%),
     radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.48), transparent 26%),
@@ -443,33 +444,39 @@ a {
 .hero-copy {
   position: relative;
   z-index: 5;
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
-  max-width: 620px;
+  max-width: 650px;
+  padding-left: clamp(0px, 2vw, 28px);
   text-shadow: none;
 }
 
 .hero-info-cards {
-  position: absolute;
-  left: 50%;
-  bottom: -54px;
+  position: relative;
+  left: auto;
+  bottom: auto;
   z-index: 6;
   display: grid;
-  width: min(944px, calc(100% - 36px));
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: min(1100px, calc(100% - 28px));
+  margin: -20px auto 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
-  transform: translateX(-50%);
+  gap: clamp(14px, 2vw, 24px);
+  transform: none;
 }
 
 .hero-info-card {
   display: grid;
-  min-height: 164px;
+  min-height: 142px;
   place-items: center;
-  padding: 28px 22px;
-  border-radius: 30px;
-  background: #fff;
-  box-shadow: 0 24px 70px rgba(62, 91, 30, 0.13);
+  padding: 24px 22px;
+  border: 1px solid rgba(231, 189, 88, 0.22);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 24px 62px rgba(0, 55, 52, 0.13);
   text-align: center;
+  backdrop-filter: blur(18px);
 }
 
 .info-icon {
@@ -590,27 +597,29 @@ p {
 .hero-media {
   position: relative;
   z-index: 5;
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
-  min-height: clamp(390px, 46vw, 540px);
+  min-height: clamp(520px, 48vw, 680px);
   overflow: visible;
   border: 0;
-  border-radius: 36px;
+  border-radius: 24px;
   box-shadow: none;
   animation: floatY 7s ease-in-out infinite;
 }
 
 .hero-slider {
   position: absolute;
-  inset: 18px 10px 24px 10px;
+  inset: 0 calc(clamp(14px, 3.2vw, 58px) * -1) 0 0;
   z-index: 1;
   overflow: hidden;
-  border: 1px solid rgba(67, 110, 70, 0.16);
-  border-radius: 34px;
+  border: 1px solid rgba(231, 189, 88, 0.22);
+  border-right: 0;
+  border-radius: 24px 0 0 24px;
   background:
-    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.72), transparent 24%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(213, 238, 149, 0.72));
-  box-shadow: 0 26px 80px rgba(67, 110, 70, 0.16);
+    radial-gradient(circle at 74% 20%, rgba(255, 232, 166, 0.34), transparent 24%),
+    radial-gradient(circle at 18% 88%, rgba(0, 107, 103, 0.32), transparent 28%),
+    linear-gradient(135deg, rgba(0, 55, 52, 0.98), rgba(0, 107, 103, 0.86));
+  box-shadow: 0 30px 92px rgba(0, 55, 52, 0.24);
 }
 
 .hero-slide {
@@ -642,11 +651,11 @@ p {
 .hero-slide img {
   width: 100%;
   height: 100%;
-  min-height: clamp(390px, 46vw, 540px);
+  min-height: clamp(520px, 48vw, 680px);
   object-fit: contain;
   object-position: center;
-  border-radius: 34px;
-  padding: clamp(18px, 3vw, 44px);
+  border-radius: 24px 0 0 24px;
+  padding: clamp(20px, 3.4vw, 58px);
 }
 
 .hero-slide-logo,
@@ -679,9 +688,9 @@ p {
 
 .hero-slide figcaption {
   position: absolute;
-  left: 28px;
+  left: clamp(24px, 4vw, 58px);
   right: auto;
-  bottom: 68px;
+  bottom: 76px;
   z-index: 3;
   display: grid;
   gap: 8px;
@@ -689,7 +698,7 @@ p {
   padding: 0;
   border: 0;
   border-radius: 0;
-  color: #363238;
+  color: var(--gold-light);
   background: transparent;
   transform: translateY(18px);
   opacity: 0;
@@ -705,11 +714,11 @@ p {
 }
 
 .hero-slide figcaption strong {
-  color: #3c4531;
+  color: var(--gold-light);
   font-size: clamp(20px, 2.4vw, 30px);
   font-weight: 950;
   line-height: 1.05;
-  text-shadow: none;
+  text-shadow: 0 0 24px rgba(231, 189, 88, 0.2);
 }
 
 .hero-slide figcaption span {
@@ -718,21 +727,21 @@ p {
   padding: 9px 13px;
   border: 1px solid rgba(95, 155, 37, 0.28);
   border-radius: 999px;
-  color: #3e4c30;
+  color: var(--gold-light);
   font-size: 13px;
   font-weight: 850;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(0, 55, 52, 0.66);
   backdrop-filter: blur(12px);
 }
 
 .hero-slider-dots {
   position: absolute;
-  left: 50%;
+  left: clamp(24px, 4vw, 58px);
   bottom: 28px;
   z-index: 6;
   display: flex;
   gap: 8px;
-  transform: translateX(-50%);
+  transform: none;
 }
 
 .hero-slider-dots button {
@@ -746,16 +755,16 @@ p {
 }
 
 .hero-slider-dots button.is-active {
-  background: #6ca52e;
-  box-shadow: 0 0 22px rgba(108, 165, 46, 0.34);
+  background: var(--gold-light);
+  box-shadow: 0 0 22px rgba(255, 232, 166, 0.42);
 }
 
 .hero-slide-progress {
   position: absolute;
-  right: 54px;
+  right: 0;
   bottom: 32px;
   z-index: 6;
-  width: min(260px, 28vw);
+  width: min(320px, 30vw);
   height: 3px;
   overflow: hidden;
   border-radius: 999px;
@@ -767,7 +776,7 @@ p {
   width: 100%;
   height: 100%;
   transform-origin: left;
-  background: linear-gradient(90deg, #80bd3a, #5f9b25);
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
   animation: slideProgress 4.2s linear infinite;
   content: "";
 }
@@ -781,7 +790,7 @@ p {
 }
 
 .orbit-one {
-  inset: -32px -38px auto auto;
+  inset: -32px -22px auto auto;
   width: 260px;
   height: 260px;
   animation: rotateSlow 16s linear infinite;
@@ -797,26 +806,26 @@ p {
 
 .floating-card {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: clamp(12px, 2vw, 26px);
+  top: clamp(16px, 2.4vw, 32px);
   bottom: auto;
   z-index: 6;
   display: grid;
   gap: 4px;
   min-width: 230px;
   padding: 18px;
-  border: 1px solid rgba(67, 110, 70, 0.18);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(231, 189, 88, 0.34);
+  border-radius: 16px;
+  background: rgba(0, 55, 52, 0.78);
   backdrop-filter: blur(16px);
 }
 
 .floating-card strong {
-  color: #3d5f27;
+  color: var(--gold-light);
 }
 
 .floating-card span {
-  color: #5c654f;
+  color: rgba(255, 255, 255, 0.78);
   font-size: 14px;
 }
 
@@ -1834,7 +1843,8 @@ td strong {
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
-    padding-bottom: 150px;
+    grid-template-rows: auto auto auto;
+    padding: 144px 24px 86px;
   }
 
   .hero-copy,
@@ -1849,7 +1859,16 @@ td strong {
   }
 
   .hero-media {
-    order: -1;
+    margin-right: -24px;
+  }
+
+  .hero-slider {
+    inset: 0 -24px 0 0;
+  }
+
+  .hero-info-cards {
+    width: 100%;
+    margin-top: 0;
   }
 
   .hero-slide-logo img,
@@ -1903,7 +1922,7 @@ td strong {
 
   .hero {
     min-height: auto;
-    padding: 46px 18px 132px;
+    padding: 154px 16px 70px;
   }
 
   .hero-copy,
@@ -1914,7 +1933,21 @@ td strong {
 
   .hero-media,
   .hero-slide img {
-    min-height: 330px;
+    min-height: 380px;
+  }
+
+  .hero-media {
+    margin-right: -16px;
+  }
+
+  .hero-slider {
+    inset: 0 -16px 0 0;
+    border-radius: 18px 0 0 18px;
+  }
+
+  .hero-slide img {
+    border-radius: 18px 0 0 18px;
+    padding: 18px 16px 88px;
   }
 
   .hero-slide-logo img,
@@ -1934,11 +1967,12 @@ td strong {
   }
 
   .hero-slider-dots {
+    left: 18px;
     bottom: 38px;
   }
 
   .hero-slide-progress {
-    right: 18px;
+    right: 0;
     left: 18px;
     bottom: 24px;
     width: auto;
@@ -1949,14 +1983,11 @@ td strong {
   }
 
   .hero-info-cards {
-    position: relative;
-    left: auto;
-    bottom: auto;
     order: 3;
     width: 100%;
     grid-template-columns: 1fr;
+    margin-top: 0;
     gap: 14px;
-    transform: none;
   }
 
   .hero-info-card {
