@@ -51,11 +51,13 @@ a {
   width: min(1240px, calc(100% - 36px));
   gap: clamp(14px, 2.4vw, 34px);
   padding: 10px 18px;
-  border: 1px solid rgba(216, 173, 71, 0.28);
+  border: 1px solid rgba(231, 189, 88, 0.32);
   border-radius: 999px;
-  color: #151827;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 18px 54px rgba(0, 55, 52, 0.28);
+  color: var(--gold-light);
+  background: rgba(0, 55, 52, 0.96);
+  box-shadow:
+    0 18px 54px rgba(0, 55, 52, 0.38),
+    0 0 0 1px rgba(231, 189, 88, 0.08) inset;
   transform: translateX(-50%);
   backdrop-filter: blur(18px);
   transition: padding 240ms ease, background 240ms ease, box-shadow 240ms ease, transform 240ms ease;
@@ -64,8 +66,10 @@ a {
 .site-header.is-scrolled {
   padding-top: 8px;
   padding-bottom: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 16px 46px rgba(0, 55, 52, 0.34);
+  background: rgba(0, 55, 52, 0.98);
+  box-shadow:
+    0 16px 46px rgba(0, 55, 52, 0.44),
+    0 0 0 1px rgba(231, 189, 88, 0.1) inset;
 }
 
 .brand,
@@ -79,7 +83,7 @@ a {
 
 .brand {
   gap: 10px;
-  color: #151827;
+  color: var(--gold-light);
   font-weight: 900;
   perspective: 900px;
 }
@@ -89,7 +93,7 @@ a {
   height: 46px;
   object-fit: contain;
   border-radius: 0;
-  filter: drop-shadow(0 10px 16px rgba(0, 55, 52, 0.18));
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.22));
   transform-origin: center;
   animation: logoCoinSpin 1.45s cubic-bezier(0.22, 0.74, 0.28, 1) 1 both;
   transform-style: preserve-3d;
@@ -113,15 +117,19 @@ a {
   align-items: center;
   gap: 7px;
   padding: 0 13px;
-  border-radius: 999px;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  border-radius: 0;
+  text-shadow: none;
+  transition: color 180ms ease, text-shadow 180ms ease, transform 180ms ease;
 }
 
 .nav-link:hover,
 .nav-link.active,
 .nav-item:focus-within > .nav-link {
-  color: #ffe8a6;
-  background: rgba(0, 55, 52, 0.9);
+  color: #f6c85f;
+  background: transparent;
+  text-shadow:
+    0 0 8px rgba(255, 232, 166, 0.72),
+    0 0 18px rgba(231, 189, 88, 0.5);
 }
 
 .nav-link:hover {
@@ -247,8 +255,8 @@ a {
 }
 
 .mega-side a::after {
-  color: #6ca52e;
-  content: "›";
+  color: var(--gold);
+  content: ">";
 }
 
 .header-cta {
@@ -257,11 +265,11 @@ a {
   align-items: center;
   gap: 10px;
   padding: 0 20px;
-  color: #fff;
+  color: var(--teal-dark);
   border-radius: 999px;
   font-weight: 900;
-  background: linear-gradient(135deg, #79b832, #5f9b25);
-  box-shadow: 0 14px 30px rgba(95, 155, 37, 0.26);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  box-shadow: 0 14px 30px rgba(231, 189, 88, 0.26);
 }
 
 .header-actions {
@@ -273,12 +281,12 @@ a {
   width: 38px;
   height: 38px;
   place-items: center;
-  border: 1px solid rgba(7, 72, 68, 0.1);
+  border: 1px solid rgba(231, 189, 88, 0.26);
   border-radius: 50%;
-  color: #151827;
+  color: var(--gold-light);
   font-size: 12px;
   font-weight: 900;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .header-search {
@@ -288,23 +296,23 @@ a {
   align-items: center;
   gap: 9px;
   padding: 0 14px;
-  border: 1px solid rgba(7, 72, 68, 0.1);
+  border: 1px solid rgba(231, 189, 88, 0.24);
   border-radius: 14px;
-  color: #697284;
-  background: #fff;
+  color: rgba(255, 232, 166, 0.76);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .header-search input {
   width: 100%;
   border: 0;
   outline: 0;
-  color: #151827;
+  color: var(--gold-light);
   font: inherit;
   background: transparent;
 }
 
 .header-search input::placeholder {
-  color: #9aa1ad;
+  color: rgba(255, 232, 166, 0.62);
 }
 
 .hero {
