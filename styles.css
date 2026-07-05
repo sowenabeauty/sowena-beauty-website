@@ -260,29 +260,67 @@ a {
 }
 
 .header-cta {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
+  flex: 0 0 200px;
   min-height: 40px;
   align-items: center;
   gap: 8px;
+  justify-content: center;
   padding: 0 18px;
   color: #fff;
   border-radius: 12px;
   font-weight: 900;
   background: linear-gradient(135deg, #08713b, #04582d);
   box-shadow: 0 12px 26px rgba(0, 55, 52, 0.26);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
-.header-cta::before {
+.header-cta::after {
+  position: absolute;
+  inset: -42% auto -42% -68%;
+  width: 58%;
+  transform: skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.58),
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.header-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 16px 34px rgba(0, 55, 52, 0.34),
+    0 0 22px rgba(255, 255, 255, 0.12) inset;
+}
+
+.header-cta:hover::after {
+  animation: glassSweep 760ms ease;
+}
+
+.whatsapp-icon {
   display: grid;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.78);
   border-radius: 50%;
   color: #fff;
-  font-size: 11px;
-  line-height: 1;
-  content: "W";
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.whatsapp-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .header-actions {
@@ -291,26 +329,37 @@ a {
 
 .header-telegram {
   display: inline-flex;
+  flex: 0 0 120px;
   min-height: 40px;
   align-items: center;
   gap: 8px;
+  justify-content: center;
   padding: 0 16px;
-  border: 1px solid rgba(231, 189, 88, 0.24);
+  border: 1px solid rgba(34, 158, 217, 0.7);
   border-radius: 14px;
-  color: rgba(255, 232, 166, 0.76);
-  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  background: linear-gradient(135deg, #2aabee, #1d8fca);
   font-size: 13px;
   font-weight: 900;
+  box-shadow: 0 12px 26px rgba(34, 158, 217, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .header-telegram::before {
-  color: var(--gold-light);
+  color: #fff;
   content: "TG";
+}
+
+.header-telegram:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 32px rgba(34, 158, 217, 0.32);
 }
 
 .hero {
   position: relative;
-  min-height: 820px;
+  width: 100%;
+  min-height: max(820px, 100vh);
   display: grid;
   grid-template-columns: minmax(360px, 0.86fr) minmax(520px, 1.14fr);
   grid-template-rows: minmax(520px, auto) auto;
@@ -1724,6 +1773,15 @@ td strong {
   }
 }
 
+@keyframes glassSweep {
+  from {
+    left: -68%;
+  }
+  to {
+    left: 118%;
+  }
+}
+
 @keyframes logoCoinSpin {
   0% {
     transform: rotateY(0deg) scale(0.96);
@@ -1826,7 +1884,11 @@ td strong {
   }
 
   .header-telegram {
-    width: min(100%, 320px);
+    flex-basis: 120px;
+  }
+
+  .header-cta {
+    flex-basis: 200px;
   }
 
   .split-section,
@@ -1902,6 +1964,22 @@ td strong {
 
   .brand {
     width: 100%;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-telegram {
+    flex: 0 0 calc(37.5% - 5px);
+    min-width: 112px;
+    padding: 0 10px;
+  }
+
+  .header-cta {
+    flex: 1 1 calc(62.5% - 5px);
+    min-width: 178px;
+    padding: 0 12px;
   }
 
   .nav-link {
