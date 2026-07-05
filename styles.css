@@ -40,35 +40,6 @@ a {
   text-decoration: none;
 }
 
-.top-strip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 10px clamp(18px, 5vw, 72px);
-  color: #fff;
-  font-size: 13px;
-  background:
-    linear-gradient(90deg, rgba(0, 55, 52, 0.96), rgba(0, 107, 103, 0.94)),
-    var(--teal-dark);
-}
-
-.top-strip div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.top-strip div span:not(:last-child)::after {
-  margin-left: 12px;
-  color: var(--gold);
-  content: "/";
-}
-
-.top-strip a {
-  color: var(--gold-light);
-}
-
 .site-header {
   position: sticky;
   top: 12px;
@@ -1664,7 +1635,6 @@ td strong {
 }
 
 @media (max-width: 980px) {
-  .top-strip,
   .site-footer,
   .banner-section {
     flex-direction: column;
@@ -1744,10 +1714,6 @@ td strong {
 }
 
 @media (max-width: 620px) {
-  .top-strip {
-    font-size: 12px;
-  }
-
   .site-header {
     width: calc(100% - 24px);
     padding: 14px;
