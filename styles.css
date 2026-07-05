@@ -1953,33 +1953,77 @@ td strong {
 
 @media (max-width: 620px) {
   .site-header {
-    width: calc(100% - 24px);
-    padding: 14px;
+    top: 8px;
+    width: calc(100% - 16px);
+    gap: 8px;
+    padding: 10px;
+    border-radius: 12px;
   }
 
   .brand {
     width: 100%;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 118px;
+    height: 34px;
+  }
+
+  .nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .nav-item {
+    min-width: 0;
   }
 
   .header-actions {
     width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    gap: 8px;
   }
 
   .header-telegram {
-    flex: 0 0 calc(37.5% - 5px);
-    min-width: 112px;
-    padding: 0 10px;
+    min-width: 0;
+    min-height: 38px;
+    padding: 0 8px;
+    font-size: 12px;
   }
 
   .header-cta {
-    flex: 1 1 calc(62.5% - 5px);
-    min-width: 178px;
-    padding: 0 12px;
+    min-width: 0;
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .header-telegram::before {
+    width: 15px;
+    height: 15px;
+    flex-basis: 15px;
+  }
+
+  .whatsapp-icon {
+    width: 18px;
+    height: 18px;
   }
 
   .nav-link {
-    min-height: 40px;
-    padding: 0 12px;
+    min-height: 32px;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 4px;
+    white-space: nowrap;
+  }
+
+  .nav-link .chevron {
+    font-size: 9px;
   }
 
   .mega-menu {
@@ -1995,11 +2039,11 @@ td strong {
 
   .hero {
     min-height: auto;
-    padding: 248px 16px 76px;
+    padding: 218px 16px 64px;
   }
 
   .hero::before {
-    inset: 204px 0 82px;
+    inset: 178px 0 0;
     width: 100%;
     background:
       linear-gradient(90deg, rgba(0, 55, 52, 0.92), rgba(0, 55, 52, 0.56) 72%, rgba(0, 55, 52, 0.08)),
@@ -2011,15 +2055,29 @@ td strong {
   }
 
   .hero-copy h1 {
-    font-size: clamp(40px, 14vw, 58px);
+    margin-bottom: 16px;
+    font-size: clamp(34px, 11vw, 48px);
+    line-height: 1.04;
   }
 
   .hero-copy p:not(.eyebrow) {
     font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .hero-badge {
+    margin-bottom: 14px;
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 11px;
   }
 
   .hero-actions {
-    top: 222px;
+    top: 176px;
     width: calc(100% - 32px);
     justify-content: center;
   }
@@ -2027,7 +2085,15 @@ td strong {
   .hero-actions .button {
     flex: 1 1 150px;
     max-width: 190px;
+    min-height: 42px;
     padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .hero-metrics {
+    gap: 8px 12px;
+    margin-top: 18px;
+    font-size: 14px;
   }
 
   .hero-info-cards {
@@ -2043,8 +2109,24 @@ td strong {
   }
 
   .hero-info-card {
-    min-height: 118px;
-    border-radius: 22px;
+    min-height: 86px;
+    grid-template-columns: 44px 1fr;
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+
+  .hero-info-card strong {
+    font-size: 14px;
+  }
+
+  .hero-info-card em {
+    font-size: 13px;
+  }
+
+  .info-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
   }
 
   .brand-marquee-section {
