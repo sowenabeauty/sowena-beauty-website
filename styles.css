@@ -346,8 +346,12 @@ a {
 }
 
 .header-telegram::before {
-  color: #fff;
-  content: "TG";
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  background: currentColor;
+  content: "";
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.94 4.16c.26-1.08-.78-1.95-1.75-1.47L2.55 11.36c-1.12.55-1.03 2.17.14 2.58l4.55 1.58 1.74 5.19c.37 1.1 1.78 1.41 2.58.57l2.49-2.62 4.6 3.35c.93.68 2.25.15 2.47-.98l2.82-16.87ZM8.04 14.08l9.3-6.16c.45-.3.93.28.55.66l-7.13 7.23-.28 3.04-1.23-3.68a1.63 1.63 0 0 0-1.03-1.03l-.18-.06Z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .header-telegram:hover {
