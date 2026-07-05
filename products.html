@@ -33,7 +33,7 @@
       </a>
     </div>
 
-    <header class="site-header">
+    <header class="site-header bento-header">
       <a class="brand" href="./index.html" aria-label="Sowena Beauty Global">
         <img
           class="brand-logo"
@@ -44,17 +44,56 @@
       </a>
 
       <nav class="nav" aria-label="Main navigation">
-        <a href="./index.html">Home</a>
-        <a href="./index.html#about">Brand</a>
-        <a class="active" href="./products.html">Products</a>
-        <a href="./index.html#routine">Solutions</a>
-        <a href="./index.html#social">Social</a>
-        <a href="./index.html#contact">Contact</a>
+        <a class="nav-link" href="./index.html">Home</a>
+        <div class="nav-item has-mega">
+          <a class="nav-link nav-pill active" href="./products.html">
+            Product
+            <span aria-hidden="true">⌄</span>
+          </a>
+          <div class="mega-menu">
+            <article class="mega-feature">
+              <img src="./assets/sowena-avatar.jpg" alt="" />
+              <strong>Product overview</strong>
+              <p>Explore aesthetic categories, brands and quotation support.</p>
+              <a href="./products.html">Open catalogue</a>
+            </article>
+            <div class="mega-grid">
+              <a href="./products.html">
+                <span>Featured</span>
+                <strong>Dermal Filler</strong>
+                <p>Premium filler and skinbooster product groups.</p>
+              </a>
+              <a href="./products.html">
+                <span>Popular</span>
+                <strong>Botulinum Toxin</strong>
+                <p>Browse product names and request one quote.</p>
+              </a>
+              <a href="./products.html">
+                <span>New</span>
+                <strong>Catalogue Updates</strong>
+                <p>Structured product list by category and brand.</p>
+              </a>
+            </div>
+            <div class="mega-side">
+              <strong>All capabilities</strong>
+              <a href="./products.html">Product filter</a>
+              <a href="./index.html#routine">Solutions</a>
+              <a href="./index.html#social">Social channels</a>
+              <a href="./index.html#contact">Contact team</a>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link" href="./index.html#routine">Solutions</a>
+        <a class="nav-link" href="./index.html#about">Brand</a>
+        <a class="nav-link" href="./index.html#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a href="https://www.instagram.com/sowena_beauty" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="https://www.tiktok.com/@sowena.beauty" target="_blank" rel="noopener noreferrer">TT</a>
+        <label class="header-search">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" placeholder="Search..." aria-label="Search Sowena" />
+        </label>
+        <a class="header-social" href="https://www.instagram.com/sowena_beauty" target="_blank" rel="noopener noreferrer">IG</a>
         <a
           class="header-cta"
           href="https://wa.me/821032577559?text=Hello%20Sowena%20Beauty%2C%20I%20would%20like%20to%20request%20a%20product%20quotation."
@@ -62,6 +101,7 @@
           rel="noopener noreferrer"
         >
           Quote
+          <span aria-hidden="true">→</span>
         </a>
       </div>
     </header>
