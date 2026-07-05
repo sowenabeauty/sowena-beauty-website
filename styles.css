@@ -365,11 +365,10 @@ a {
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  gap: clamp(34px, 7vw, 118px);
   align-items: center;
-  padding: 148px clamp(18px, 5vw, 86px) 132px;
+  padding: 150px clamp(22px, 5vw, 86px) 118px;
   background:
     radial-gradient(circle at 78% 18%, rgba(255, 232, 166, 0.16), transparent 28%),
     radial-gradient(circle at 14% 86%, rgba(16, 196, 189, 0.2), transparent 26%),
@@ -511,31 +510,29 @@ a {
   position: relative;
   z-index: 8;
   grid-column: 1;
-  grid-row: 1;
-  max-width: min(680px, 52vw);
+  max-width: 700px;
   padding-left: 0;
   text-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
 }
 
 .hero-info-cards {
-  position: absolute;
-  top: 178px;
-  right: clamp(18px, 5vw, 86px);
+  position: relative;
   z-index: 9;
   display: grid;
-  width: min(340px, 28vw);
+  grid-column: 2;
+  width: 100%;
   margin: 0;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 14px;
   transform: none;
 }
 
 .hero-info-card {
   display: grid;
-  min-height: 90px;
-  grid-template-columns: 48px 1fr;
+  min-height: 86px;
+  grid-template-columns: 44px 1fr;
   align-items: center;
-  padding: 16px 18px;
+  padding: 15px 16px;
   border: 1px solid rgba(231, 189, 88, 0.26);
   border-radius: 16px;
   background: rgba(0, 55, 52, 0.7);
@@ -546,25 +543,26 @@ a {
 
 .info-icon {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   margin-bottom: 0;
   border: 2px solid rgba(231, 189, 88, 0.38);
   border-radius: 50%;
   color: var(--gold-light);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 950;
 }
 
 .hero-info-card strong {
   color: var(--gold-light);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 950;
 }
 
 .hero-info-card em {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
   font-style: normal;
   font-weight: 800;
 }
@@ -639,14 +637,12 @@ p {
 }
 
 .hero-actions {
-  position: absolute;
-  top: 128px;
-  left: 50%;
+  position: relative;
   z-index: 10;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 0;
-  transform: translateX(-50%);
+  margin-top: 28px;
+  transform: none;
 }
 
 .button {
@@ -1899,6 +1895,7 @@ td strong {
 
   .hero {
     min-height: auto;
+    grid-template-columns: 1fr;
     padding: 172px 24px 96px;
   }
 
@@ -1914,14 +1911,11 @@ td strong {
     max-width: min(620px, 100%);
   }
 
-  .hero-actions {
-    top: 146px;
-  }
-
   .hero-info-cards {
     position: relative;
     top: auto;
     right: auto;
+    grid-column: 1;
     width: 100%;
     max-width: 720px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2039,11 +2033,11 @@ td strong {
 
   .hero {
     min-height: auto;
-    padding: 218px 16px 64px;
+    padding: 198px 16px 64px;
   }
 
   .hero::before {
-    inset: 178px 0 0;
+    inset: 158px 0 0;
     width: 100%;
     background:
       linear-gradient(90deg, rgba(0, 55, 52, 0.92), rgba(0, 55, 52, 0.56) 72%, rgba(0, 55, 52, 0.08)),
@@ -2077,9 +2071,9 @@ td strong {
   }
 
   .hero-actions {
-    top: 176px;
     width: calc(100% - 32px);
     justify-content: center;
+    margin-top: 22px;
   }
 
   .hero-actions .button {
@@ -2100,6 +2094,9 @@ td strong {
     position: relative;
     left: auto;
     bottom: auto;
+    top: auto;
+    right: auto;
+    grid-column: 1;
     z-index: 9;
     width: 100%;
     grid-template-columns: 1fr;
