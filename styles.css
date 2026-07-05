@@ -8,8 +8,8 @@
   --teal-dark: #003734;
   --teal-deep: #062624;
   --aqua: #10c4bd;
-  --gold: #d8ad47;
-  --gold-light: #ffe28a;
+  --gold: #e7bd58;
+  --gold-light: #ffe8a6;
   --cream: #f9f4e8;
 }
 
@@ -94,7 +94,7 @@ a {
 .nav {
   justify-content: center;
   gap: 8px;
-  color: var(--gold);
+  color: #e7bd58;
   font-size: 13px;
   font-weight: 800;
 }
@@ -116,7 +116,7 @@ a {
 .nav-link:hover,
 .nav-link.active,
 .nav-item:focus-within > .nav-link {
-  color: #fff1ad;
+  color: #ffe8a6;
   background: rgba(0, 55, 52, 0.9);
 }
 
@@ -203,7 +203,7 @@ a {
 }
 
 .mega-feature a {
-  color: #5b8f28;
+  color: #b98b2d;
   font-weight: 900;
 }
 
@@ -219,7 +219,7 @@ a {
 }
 
 .mega-grid span {
-  color: #6ca52e;
+  color: #c99937;
   font-size: 11px;
   font-weight: 950;
   text-transform: uppercase;
