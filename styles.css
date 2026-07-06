@@ -392,12 +392,14 @@ a {
 
 .hero::after {
   position: absolute;
-  left: -5%;
-  right: -5%;
-  bottom: -92px;
-  height: 190px;
+  left: -8%;
+  right: -8%;
+  bottom: -112px;
+  height: 230px;
   border-radius: 50% 50% 0 0;
-  background: #fffef9;
+  background:
+    linear-gradient(180deg, rgba(0, 55, 52, 0) 0%, rgba(255, 254, 249, 0.54) 46%, #fffef9 84%),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 232, 166, 0.16), transparent 58%);
   content: "";
   pointer-events: none;
   z-index: 2;
@@ -872,10 +874,12 @@ p {
 
 .brand-marquee-section {
   overflow: hidden;
-  padding: 118px 0 38px;
+  margin-top: -1px;
+  padding: 96px 0 38px;
   border-bottom: 1px solid rgba(7, 72, 68, 0.12);
   background:
-    radial-gradient(circle at 50% 0%, rgba(216, 173, 71, 0.09), transparent 34%),
+    linear-gradient(180deg, rgba(255, 254, 249, 0.88) 0%, #fffef9 24%),
+    radial-gradient(circle at 50% 0%, rgba(216, 173, 71, 0.12), transparent 36%),
     #fffef9;
   text-align: center;
 }
@@ -2129,7 +2133,7 @@ td strong {
   }
 
   .brand-marquee-section {
-    padding-top: 46px;
+    padding-top: 58px;
   }
 
   .service-row,
