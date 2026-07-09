@@ -493,3 +493,91 @@ if (grid) {
   renderProducts();
   updateQuoteDrawer();
 }
+
+const offerConfig = {
+  code: "SOWENA10",
+  phone: "821032577559",
+  text: "Hello Sowena Beauty, I would like to receive the 10% discount code SOWENA10."
+};
+
+const createOfferPopup = () => {
+  let popup = document.querySelector("[data-offer-popup]");
+  if (popup) return popup;
+
+  const whatsappUrl = `https://wa.me/${offerConfig.phone}?text=${encodeURIComponent(offerConfig.text)}`;
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="offer-popup" data-offer-popup role="dialog" aria-modal="true" aria-labelledby="offer-popup-title" aria-hidden="true">
+        <div class="offer-popup__backdrop" data-offer-close></div>
+        <div class="offer-popup__panel">
+          <button class="offer-popup__close" type="button" data-offer-close aria-label="Close offer">x</button>
+          <span class="offer-popup__badge">Limited website offer</span>
+          <h2 id="offer-popup-title">Get 10% off your first quote</h2>
+          <p>
+            Receive your discount code on WhatsApp and let the Sowena team help
+            you choose the right aesthetic products faster.
+          </p>
+          <div class="offer-popup__code" aria-label="Discount code">
+            <span>Your code</span>
+            <strong>${offerConfig.code}</strong>
+          </div>
+          <div class="offer-popup__actions">
+            <a class="button primary" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" data-offer-claim>
+              Receive on WhatsApp
+            </a>
+            <button class="button secondary" type="button" data-offer-close>Maybe later</button>
+          </div>
+        </div>
+      </div>
+    `
+  );
+
+  popup = document.querySelector("[data-offer-popup]");
+  popup.querySelectorAll("[data-offer-close]").forEach((control) => {
+    control.addEventListener("click", () => hideOfferPopup());
+  });
+  popup.querySelector("[data-offer-claim]")?.addEventListener("click", () => {
+    window.localStorage.setItem("sowenaOfferClaimed", "true");
+    hideOfferPopup();
+  });
+
+  return popup;
+};
+
+const showOfferPopup = () => {
+  if (window.localStorage.getItem("sowenaOfferClaimed") === "true") return;
+  const popup = createOfferPopup();
+  popup.classList.add("is-visible");
+  popup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("has-offer-popup");
+};
+
+const hideOfferPopup = () => {
+  const popup = document.querySelector("[data-offer-popup]");
+  if (!popup) return;
+  popup.classList.remove("is-visible");
+  popup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("has-offer-popup");
+};
+
+const scheduleOfferPopup = () => {
+  if (window.localStorage.getItem("sowenaOfferClaimed") === "true") return;
+
+  const pageKey = window.location.pathname || "/";
+  const firstVisitKey = "sowenaOfferFirstVisit";
+  const reminderKey = `sowenaOfferReminder:${pageKey}`;
+
+  if (!window.sessionStorage.getItem(firstVisitKey)) {
+    window.sessionStorage.setItem(firstVisitKey, "true");
+    window.setTimeout(showOfferPopup, 30000);
+    return;
+  }
+
+  if (!window.sessionStorage.getItem(reminderKey)) {
+    window.sessionStorage.setItem(reminderKey, "true");
+    window.setTimeout(showOfferPopup, 1000);
+  }
+};
+
+scheduleOfferPopup();
