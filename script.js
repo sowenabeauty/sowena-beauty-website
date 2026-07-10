@@ -497,14 +497,33 @@ if (grid) {
 const offerConfig = {
   code: "SOWENA10",
   phone: "821032577559",
-  text: "Hello Sowena Beauty, I would like to receive the 10% discount code SOWENA10."
+  validDays: 30,
+  minimumProducts: 10,
+  minimumOrderValue: 1000
 };
+
+const getOfferDeadline = () => {
+  const deadline = new Date(Date.now() + offerConfig.validDays * 24 * 60 * 60 * 1000);
+  return deadline.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric"
+  });
+};
+
+const getOfferMessage = (deadline) =>
+  `Hello Sowena Beauty, I would like to receive the ${offerConfig.code} discount code. I understand the offer is valid until ${deadline} and applies to orders of ${offerConfig.minimumProducts}+ products or orders over $${offerConfig.minimumOrderValue}.`;
+
+const getOfferClaimedUntil = () => Number(window.localStorage.getItem("sowenaOfferClaimedUntil") || 0);
+
+const hasActiveOfferClaim = () => getOfferClaimedUntil() > Date.now();
 
 const createOfferPopup = () => {
   let popup = document.querySelector("[data-offer-popup]");
   if (popup) return popup;
 
-  const whatsappUrl = `https://wa.me/${offerConfig.phone}?text=${encodeURIComponent(offerConfig.text)}`;
+  const deadline = getOfferDeadline();
+  const whatsappUrl = `https://wa.me/${offerConfig.phone}?text=${encodeURIComponent(getOfferMessage(deadline))}`;
   document.body.insertAdjacentHTML(
     "beforeend",
     `
@@ -513,15 +532,17 @@ const createOfferPopup = () => {
         <div class="offer-popup__panel">
           <button class="offer-popup__close" type="button" data-offer-close aria-label="Close offer">x</button>
           <span class="offer-popup__badge">Limited website offer</span>
-          <h2 id="offer-popup-title">Get 10% off your first quote</h2>
+          <h2 id="offer-popup-title">Get 10% off your quote</h2>
           <p>
-            Receive your discount code on WhatsApp and let the Sowena team help
-            you choose the right aesthetic products faster.
+            Receive your discount code on WhatsApp. Valid for ${offerConfig.validDays}
+            days and applied to orders of ${offerConfig.minimumProducts}+ products
+            or orders over $${offerConfig.minimumOrderValue}.
           </p>
           <div class="offer-popup__code" aria-label="Discount code">
             <span>Your code</span>
             <strong>${offerConfig.code}</strong>
           </div>
+          <p class="offer-popup__deadline">Valid until ${deadline}</p>
           <div class="offer-popup__actions">
             <a class="button primary" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" data-offer-claim>
               Receive on WhatsApp
@@ -538,7 +559,8 @@ const createOfferPopup = () => {
     control.addEventListener("click", () => hideOfferPopup());
   });
   popup.querySelector("[data-offer-claim]")?.addEventListener("click", () => {
-    window.localStorage.setItem("sowenaOfferClaimed", "true");
+    const claimedUntil = Date.now() + offerConfig.validDays * 24 * 60 * 60 * 1000;
+    window.localStorage.setItem("sowenaOfferClaimedUntil", String(claimedUntil));
     hideOfferPopup();
   });
 
@@ -546,7 +568,7 @@ const createOfferPopup = () => {
 };
 
 const showOfferPopup = () => {
-  if (window.localStorage.getItem("sowenaOfferClaimed") === "true") return;
+  if (hasActiveOfferClaim()) return;
   const popup = createOfferPopup();
   popup.classList.add("is-visible");
   popup.setAttribute("aria-hidden", "false");
@@ -562,7 +584,7 @@ const hideOfferPopup = () => {
 };
 
 const scheduleOfferPopup = () => {
-  if (window.localStorage.getItem("sowenaOfferClaimed") === "true") return;
+  if (hasActiveOfferClaim()) return;
 
   const pageKey = window.location.pathname || "/";
   const firstVisitKey = "sowenaOfferFirstVisit";

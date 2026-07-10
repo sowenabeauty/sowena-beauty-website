@@ -1884,6 +1884,13 @@ body.has-offer-popup {
   font-size: 24px;
 }
 
+.offer-popup__deadline {
+  margin: -6px 0 20px;
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 850;
+}
+
 .offer-popup__actions {
   display: flex;
   flex-wrap: wrap;
