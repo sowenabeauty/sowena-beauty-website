@@ -382,8 +382,8 @@ const updateQuoteDrawer = () => {
   sendQuote.classList.toggle("disabled", selected.length === 0);
   sendQuote.href =
     selected.length === 0
-      ? "https://wa.me/821032577559"
-      : `https://wa.me/821032577559?text=Hello%20Sowena%20Beauty%2C%0AI%20would%20like%20to%20request%20a%20quotation%20for%3A%0A${body}`;
+      ? "https://wa.me/84961751956"
+      : `https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%0AI%20would%20like%20to%20request%20a%20quotation%20for%3A%0A${body}`;
 };
 
 const toggleProduct = (id) => {
@@ -496,7 +496,7 @@ if (grid) {
 
 const offerConfig = {
   code: "SOWENA10",
-  phone: "821032577559",
+  phone: "84961751956",
   validDays: 30,
   minimumProducts: 10,
   minimumOrderValue: 1000
