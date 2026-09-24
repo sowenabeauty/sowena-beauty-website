@@ -2,6 +2,65 @@ const header = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll(".reveal");
 const heroSlides = document.querySelectorAll(".hero-slide");
 const heroDots = document.querySelectorAll("[data-hero-dot]");
+
+const createFloatingContactWidget = () => {
+  if (document.querySelector("[data-floating-contact-widget]")) return;
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="floating-contact-widget" data-floating-contact-widget>
+        <button
+          class="header-mobile-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="floating-contact-panel"
+          data-mobile-contact-toggle
+        >
+          <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
+          <span class="mobile-toggle-icon mobile-toggle-whatsapp" aria-hidden="true"></span>
+          <span class="sr-only">Open contact options</span>
+        </button>
+        <div class="mobile-contact-panel" id="floating-contact-panel" data-mobile-contact-panel hidden>
+          <div class="mobile-contact-panel__inner">
+            <div class="mobile-contact-panel__intro">
+              <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
+              <div>
+                <strong>Wholesale sourcing community</strong>
+                <p>Join our Telegram group for trusted wholesale sources, product updates and better partner pricing.</p>
+              </div>
+            </div>
+            <form class="telegram-join-form" data-telegram-join-form>
+              <label>
+                <span>Name</span>
+                <input type="text" name="customerName" autocomplete="name" required />
+              </label>
+              <label>
+                <span>WhatsApp number</span>
+                <input type="tel" name="whatsapp" autocomplete="tel" required />
+              </label>
+              <label>
+                <span>Country</span>
+                <input type="text" name="country" autocomplete="country-name" required />
+              </label>
+              <label class="telegram-join-form__check">
+                <input type="checkbox" name="intent" required />
+                <span>I want to join the group to receive the best wholesale sources and prices.</span>
+              </label>
+              <button type="submit">Send join request</button>
+            </form>
+            <a class="mobile-panel-whatsapp" href="https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%20I%20would%20like%20to%20request%20a%20WhatsApp%20quote." target="_blank" rel="noopener noreferrer">
+              WhatsApp quote
+            </a>
+          </div>
+        </div>
+      </div>
+    `
+  );
+};
+
+createFloatingContactWidget();
+
 const mobileContactToggles = document.querySelectorAll("[data-mobile-contact-toggle]");
 const telegramJoinForms = document.querySelectorAll("[data-telegram-join-form]");
 
@@ -11,7 +70,7 @@ const closeMobileContactPanels = (exceptPanel = null) => {
     panel.hidden = true;
     panel.classList.remove("is-open");
     const toggle = panel
-      .closest(".header-actions")
+      .closest("[data-floating-contact-widget]")
       ?.querySelector("[data-mobile-contact-toggle]");
     toggle?.classList.remove("is-open");
     toggle?.setAttribute("aria-expanded", "false");
@@ -20,7 +79,7 @@ const closeMobileContactPanels = (exceptPanel = null) => {
 
 mobileContactToggles.forEach((toggle) => {
   const panel = toggle
-    .closest(".header-actions")
+    .closest("[data-floating-contact-widget]")
     ?.querySelector("[data-mobile-contact-panel]");
 
   if (!panel) return;
@@ -37,7 +96,7 @@ mobileContactToggles.forEach((toggle) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (event.target.closest(".header-actions")) return;
+  if (event.target.closest("[data-floating-contact-widget]")) return;
   closeMobileContactPanels();
 });
 

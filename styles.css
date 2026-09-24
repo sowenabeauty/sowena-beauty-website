@@ -371,6 +371,7 @@ a {
   box-shadow: 0 16px 32px rgba(34, 158, 217, 0.32);
 }
 
+.floating-contact-widget,
 .header-mobile-toggle,
 .mobile-contact-panel {
   display: none;
@@ -2573,19 +2574,20 @@ body.has-offer-popup {
   }
 
   .header-actions {
-    position: fixed;
-    right: env(safe-area-inset-right, 0);
-    bottom: env(safe-area-inset-bottom, 0);
-    z-index: 95;
-    width: auto;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0;
+    display: none;
   }
 
   .header-telegram,
   .header-cta {
     display: none;
+  }
+
+  .floating-contact-widget {
+    position: fixed;
+    right: env(safe-area-inset-right, 0);
+    bottom: env(safe-area-inset-bottom, 0);
+    z-index: 95;
+    display: block;
   }
 
   .header-mobile-toggle {
