@@ -11,8 +11,11 @@ Business context:
 - Brand: Sowena Beauty Global
 - Website: https://www.sowenabeauty.com
 - Audience: clinics, distributors, wholesale buyers, and global beauty partners
+- Market: Global
+- Language: English
 - Main conversion: WhatsApp quotation request
 - Offer: SOWENA10, 10% discount for 10+ products or orders over $1000, valid for 30 days from claim date
+- Product priority: all catalogue categories, including Dermal Filler, Botulinum Toxin, Fat Dissolving / Weight Loss, IV Whitening Drip, Meso / Skin Booster, and Topical Anaesthetic
 
 Keyword data:
 - Primary keyword: [PRIMARY_KEYWORD]
@@ -50,4 +53,3 @@ Writing rules:
 - Keep paragraphs concise.
 - Write for professional buyers, not casual consumers.
 ```
-

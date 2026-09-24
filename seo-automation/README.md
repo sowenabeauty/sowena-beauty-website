@@ -4,6 +4,18 @@ This folder defines the operating workflow for GPT-assisted SEO content.
 
 The goal is to turn real keyword data into useful blog pages for Sowena Beauty Global, while avoiding unsupported medical claims and keeping every article focused on conversion through WhatsApp quotation requests.
 
+## Current operating settings
+
+- Market: Global
+- Article language: English
+- Product priority: all product categories contained in the website catalogue
+- Publishing cadence: 3 articles per week
+- Publishing days: Monday, Wednesday, Friday
+- Publishing time: 8:00 PM Vietnam time
+- Timezone: Asia/Ho_Chi_Minh
+
+See `seo-settings.md` for the full operating rules.
+
 ## What this workflow does
 
 1. Collect keyword data from Google Keyword Planner, Google Search Console, Semrush, Ahrefs, or another SEO data source.
@@ -13,6 +25,7 @@ The goal is to turn real keyword data into useful blog pages for Sowena Beauty G
 5. Review drafts with the checklist.
 6. Publish approved drafts as static HTML blog pages.
 7. Update `blog/index.html` and `sitemap.xml`.
+8. Commit and push approved pages to GitHub `main` for Vercel deployment.
 
 ## Data required from the site owner
 
@@ -60,4 +73,3 @@ Do not publish an article unless it passes:
 Use `gpt-seo-article-prompt.md` as the master prompt for drafting.
 
 When API automation is added later, keep the OpenAI API key out of frontend code and store it in environment variables only.
-

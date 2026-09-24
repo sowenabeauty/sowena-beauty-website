@@ -4,34 +4,23 @@ To run SEO content properly, please provide these items.
 
 ## Required
 
-1. Target market:
-   - Vietnam
-   - Korea
-   - Global
-   - US
-   - EU
-   - Other
+The following items are already confirmed:
 
-2. Main article language:
-   - English
-   - Vietnamese
-   - Bilingual
+- Target market: Global
+- Article language: English
+- Product priority: all products contained in the catalogue
+- Publishing frequency: 3 articles per week
+- Publishing schedule: Monday, Wednesday, Friday at 8:00 PM Vietnam time
 
-3. Keyword data:
+Still needed for true high-search keyword prioritization:
+
+1. Keyword data:
    - Google Keyword Planner CSV, or
    - Google Search Console CSV, or
    - Semrush/Ahrefs export, or
    - Fill `keyword-intake-template.csv`
 
-4. Product priority list:
-   - Dermal filler
-   - Botulinum toxin
-   - Skinbooster
-   - Skincare
-   - Wellness
-   - Other
-
-5. Compliance rules:
+2. Compliance rules:
    - Product names allowed
    - Product names to avoid
    - Claims to avoid
@@ -55,4 +44,3 @@ If OpenAI API automation is needed later, use environment variables:
 ```text
 OPENAI_API_KEY=your_key_here
 ```
-
