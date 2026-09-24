@@ -10,26 +10,26 @@ const createFloatingContactWidget = () => {
     "beforeend",
     `
       <div class="floating-contact-widget" data-floating-contact-widget>
-        <button
+        <a
           class="header-mobile-toggle"
+          href="https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%20I%20would%20like%20to%20request%20a%20WhatsApp%20quote."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
+          <span class="mobile-toggle-icon mobile-toggle-whatsapp" aria-hidden="true"></span>
+          <span class="sr-only">Open WhatsApp quote</span>
+        </a>
+        <button
+          class="floating-telegram-cta"
           type="button"
           aria-expanded="false"
           aria-controls="floating-contact-panel"
           data-mobile-contact-toggle
         >
           <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
-          <span class="mobile-toggle-icon mobile-toggle-whatsapp" aria-hidden="true"></span>
-          <span class="sr-only">Open contact options</span>
-        </button>
-        <a
-          class="floating-telegram-cta"
-          href="https://t.me/sowenabeauty"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
           Community
-        </a>
+        </button>
         <div class="mobile-contact-panel" id="floating-contact-panel" data-mobile-contact-panel hidden>
           <div class="mobile-contact-panel__inner">
             <div class="mobile-contact-panel__intro">
@@ -58,9 +58,6 @@ const createFloatingContactWidget = () => {
               </label>
               <button type="submit">Send join request</button>
             </form>
-            <a class="mobile-panel-whatsapp" href="https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%20I%20would%20like%20to%20request%20a%20WhatsApp%20quote." target="_blank" rel="noopener noreferrer">
-              WhatsApp quote
-            </a>
           </div>
         </div>
       </div>
@@ -120,7 +117,7 @@ telegramJoinForms.forEach((form) => {
 
     const data = new FormData(form);
     const message = [
-      "Hello Sowena Beauty, I would like to apply for the Telegram wholesale sourcing community.",
+      "Hello Sowena Beauty, I would like to apply for the Telegram wholesale sourcing community. Please review and approve my request to join the group.",
       `Name: ${data.get("customerName")}`,
       `WhatsApp: ${data.get("whatsapp")}`,
       `Country: ${data.get("country")}`,
