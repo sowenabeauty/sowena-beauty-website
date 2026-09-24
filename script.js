@@ -2,6 +2,70 @@ const header = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll(".reveal");
 const heroSlides = document.querySelectorAll(".hero-slide");
 const heroDots = document.querySelectorAll("[data-hero-dot]");
+const mobileContactToggles = document.querySelectorAll("[data-mobile-contact-toggle]");
+const telegramJoinForms = document.querySelectorAll("[data-telegram-join-form]");
+
+const closeMobileContactPanels = (exceptPanel = null) => {
+  document.querySelectorAll("[data-mobile-contact-panel]").forEach((panel) => {
+    if (panel === exceptPanel) return;
+    panel.hidden = true;
+    panel.classList.remove("is-open");
+    const toggle = panel
+      .closest(".header-actions")
+      ?.querySelector("[data-mobile-contact-toggle]");
+    toggle?.classList.remove("is-open");
+    toggle?.setAttribute("aria-expanded", "false");
+  });
+};
+
+mobileContactToggles.forEach((toggle) => {
+  const panel = toggle
+    .closest(".header-actions")
+    ?.querySelector("[data-mobile-contact-panel]");
+
+  if (!panel) return;
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const willOpen = panel.hidden;
+    closeMobileContactPanels(panel);
+    panel.hidden = !willOpen;
+    panel.classList.toggle("is-open", willOpen);
+    toggle.classList.toggle("is-open", willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".header-actions")) return;
+  closeMobileContactPanels();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMobileContactPanels();
+});
+
+telegramJoinForms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const message = [
+      "Hello Sowena Beauty, I would like to apply for the Telegram wholesale sourcing community.",
+      `Name: ${data.get("customerName")}`,
+      `WhatsApp: ${data.get("whatsapp")}`,
+      `Country: ${data.get("country")}`,
+      "I want to join the group to receive the best wholesale sources and prices."
+    ].join("\n");
+
+    window.open(
+      `https://wa.me/84961751956?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  });
+});
 
 if (heroSlides.length > 1) {
   let activeHeroSlide = 0;
