@@ -373,6 +373,7 @@ a {
 
 .floating-contact-widget,
 .header-mobile-toggle,
+.floating-telegram-cta,
 .mobile-contact-panel {
   display: none;
 }
@@ -2587,7 +2588,9 @@ body.has-offer-popup {
     right: max(12px, env(safe-area-inset-right));
     bottom: calc(env(safe-area-inset-bottom, 0px) + 112px);
     z-index: 95;
-    display: block;
+    display: grid;
+    justify-items: end;
+    gap: 10px;
   }
 
   .header-mobile-toggle {
@@ -2627,6 +2630,36 @@ body.has-offer-popup {
     display: none;
   }
 
+  .floating-telegram-cta {
+    display: inline-flex;
+    min-width: 126px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 18px;
+    border: 1px solid rgba(231, 189, 88, 0.32);
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, #2aabee, #1d8fca);
+    box-shadow:
+      0 14px 30px rgba(34, 158, 217, 0.28),
+      0 8px 20px rgba(0, 24, 22, 0.2);
+    font-size: 13px;
+    font-weight: 950;
+  }
+
+  .floating-telegram-cta .mobile-toggle-icon {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+  }
+
+  .floating-telegram-cta:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+  }
+
   .header-mobile-toggle:hover,
   .header-mobile-toggle.is-open {
     filter: brightness(1.04);
@@ -2640,7 +2673,7 @@ body.has-offer-popup {
   .mobile-contact-panel.is-open {
     position: fixed;
     right: max(12px, env(safe-area-inset-right));
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 176px);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 232px);
     z-index: 94;
     display: block;
     width: min(330px, calc(100vw - 24px));

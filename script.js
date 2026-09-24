@@ -21,6 +21,15 @@ const createFloatingContactWidget = () => {
           <span class="mobile-toggle-icon mobile-toggle-whatsapp" aria-hidden="true"></span>
           <span class="sr-only">Open contact options</span>
         </button>
+        <a
+          class="floating-telegram-cta"
+          href="https://t.me/sowenabeauty"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="mobile-toggle-icon mobile-toggle-telegram" aria-hidden="true"></span>
+          Community
+        </a>
         <div class="mobile-contact-panel" id="floating-contact-panel" data-mobile-contact-panel hidden>
           <div class="mobile-contact-panel__inner">
             <div class="mobile-contact-panel__intro">
