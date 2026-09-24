@@ -2574,8 +2574,8 @@ body.has-offer-popup {
 
   .header-actions {
     position: fixed;
-    right: max(12px, env(safe-area-inset-right));
-    bottom: max(12px, env(safe-area-inset-bottom));
+    right: env(safe-area-inset-right, 0);
+    bottom: env(safe-area-inset-bottom, 0);
     z-index: 95;
     width: auto;
     display: flex;
@@ -2637,8 +2637,8 @@ body.has-offer-popup {
 
   .mobile-contact-panel.is-open {
     position: fixed;
-    right: max(12px, env(safe-area-inset-right));
-    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 64px);
+    right: env(safe-area-inset-right, 0);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 64px);
     z-index: 94;
     display: block;
     width: min(330px, calc(100vw - 24px));
