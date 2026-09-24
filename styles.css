@@ -2584,8 +2584,8 @@ body.has-offer-popup {
 
   .floating-contact-widget {
     position: fixed;
-    right: env(safe-area-inset-right, 0);
-    bottom: env(safe-area-inset-bottom, 0);
+    right: max(12px, env(safe-area-inset-right));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 112px);
     z-index: 95;
     display: block;
   }
@@ -2639,8 +2639,8 @@ body.has-offer-popup {
 
   .mobile-contact-panel.is-open {
     position: fixed;
-    right: env(safe-area-inset-right, 0);
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 64px);
+    right: max(12px, env(safe-area-inset-right));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 176px);
     z-index: 94;
     display: block;
     width: min(330px, calc(100vw - 24px));
