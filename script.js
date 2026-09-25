@@ -1,3 +1,23 @@
+const googleAnalyticsMeasurementId = "G-5N5W3493WT";
+
+if (!document.querySelector('script[data-sowena-google-analytics]')) {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+  window.gtag("js", new Date());
+  window.gtag("config", googleAnalyticsMeasurementId);
+
+  const googleAnalyticsScript = document.createElement("script");
+  googleAnalyticsScript.async = true;
+  googleAnalyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`;
+  googleAnalyticsScript.dataset.sowenaGoogleAnalytics = "true";
+  document.head.appendChild(googleAnalyticsScript);
+}
+
 const header = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll(".reveal");
 const heroSlides = document.querySelectorAll(".hero-slide");
