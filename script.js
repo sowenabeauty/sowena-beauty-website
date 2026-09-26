@@ -676,7 +676,7 @@ const renderProducts = () => {
       const selected = selectedProducts.has(id);
       return `
         <article class="catalogue-card reveal is-visible">
-          <figure class="catalogue-card-visual">
+          <figure class="catalogue-card-visual" style="--product-image: url('${product.image}')">
             <span>
               <img src="${product.image}" alt="${product.name}" loading="lazy" />
             </span>
