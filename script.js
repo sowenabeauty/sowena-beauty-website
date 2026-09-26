@@ -414,6 +414,29 @@ const categoryImages = {
 
 const productImages = {
   // PRODUCT_IMAGES_AUTO_GENERATED_START
+  "Skinfill Bacio": "./assets/products/skinfill-bacio.webp",
+  "Puri Lips": "./assets/products/puri-lips.webp",
+  "VS NAD+": "./assets/products/vs-nad.webp",
+  "VS Vitathione NAD+": "./assets/products/vs-vitathione-nad.webp",
+  "VS PNAD+": "./assets/products/vs-pnad.webp",
+  "VS Collagen NAD+": "./assets/products/vs-collagen-nad.webp",
+  "VS Multi-lamellar NAD+": "./assets/products/vs-multi-lamellar-nad.webp",
+  "VS Toxnad NAD+": "./assets/products/vs-toxnad-nad.webp",
+  "Complex ASCE": "./assets/products/complex-asce.webp",
+  "Profhilo H+L": "./assets/products/profhilo-h-l.webp",
+  "Puri PDRN": "./assets/products/puri-pdrn.webp",
+  "Hyaron": "./assets/products/hyaron.webp",
+  "Jariot Baby Face": "./assets/products/jariot-baby-face.webp",
+  "Luhilo": "./assets/products/luhilo.webp",
+  "Luhilo Snow": "./assets/products/luhilo-snow.webp",
+  "Dr. Lacir Mask": "./assets/products/dr-lacir-mask.webp",
+  "Karisma": "./assets/products/karisma.webp",
+  "NCTF (5 Bottles)": "./assets/products/nctf-5-bottles.webp",
+  "Vitarium": "./assets/products/vitarium.webp",
+  "NCTF (10 Bottles)": "./assets/products/nctf-10-bottles.webp",
+  "Exocode": "./assets/products/exocode.webp",
+  "Exoten": "./assets/products/exoten.webp",
+  "Evehilo": "./assets/products/evehilo.webp",
   // PRODUCT_IMAGES_AUTO_GENERATED_END
 };
 
