@@ -412,6 +412,11 @@ const categoryImages = {
   "Topical Anaesthetic": "./assets/sowena-logo-transparent.png"
 };
 
+const productImages = {
+  // PRODUCT_IMAGES_AUTO_GENERATED_START
+  // PRODUCT_IMAGES_AUTO_GENERATED_END
+};
+
 const brandAliases = [
   "Juvederm",
   "Restylane",
@@ -455,7 +460,7 @@ const products = Object.entries(rawCatalogue).flatMap(([category, names]) =>
     brand: inferBrand(name),
     origin: inferOrigin(name),
     description: categoryDescriptions[category],
-    image: categoryImages[category]
+    image: productImages[name] || categoryImages[category]
   }))
 );
 
