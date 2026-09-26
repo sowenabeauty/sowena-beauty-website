@@ -400,7 +400,6 @@ const rawCatalogue = {
     "Ceret",
     "Lumi Eyes",
     "Richese Eyes",
-    "Teoxane",
     "Luna Eyes"
   ],
   "Topical Anaesthetic": [
@@ -527,6 +526,8 @@ const brandAliases = [
   "Sculptra",
   "Rejuran",
   "Jalupro",
+  "Teoxan",
+  "Teoxane",
   "NCTF",
   "GTM",
   "VS",
@@ -547,7 +548,7 @@ const brandAliases = [
 
 const originAliases = [
   { match: /juvederm|botox|daxxify|mounjaro|ozempic|tirzepatide|retatrutide/i, origin: "USA" },
-  { match: /restylane|dysport|sculptra|radiesse|stylage|vivacy|teoxane|jalupro|aqualyx|french|france/i, origin: "Europe" }
+  { match: /restylane|dysport|sculptra|radiesse|stylage|vivacy|teoxan|teoxane|jalupro|aqualyx|french|france/i, origin: "Europe" }
 ];
 
 const inferBrand = (name) =>
