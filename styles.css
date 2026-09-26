@@ -2853,3 +2853,125 @@ body.has-offer-popup {
     min-width: 0;
   }
 }
+
+/* Product catalogue: fixed five-column grid and square non-cropping image frames. */
+.catalogue-page .products-catalogue-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: clamp(4px, 1vw, 18px) !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card {
+  min-width: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card-visual {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card-visual > a,
+.catalogue-page .products-catalogue-grid .catalogue-card-visual > span {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: clamp(5px, 1vw, 16px) !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card-visual img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.24)) !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card-body {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+}
+
+.catalogue-page .products-catalogue-grid .catalogue-card h3 {
+  overflow-wrap: anywhere !important;
+}
+
+.catalogue-page .products-catalogue-grid .add-quote {
+  margin-top: auto !important;
+}
+
+@media (max-width: 600px) {
+  .catalogue-page {
+    overflow-x: hidden !important;
+  }
+
+  .catalogue-page .catalogue-content {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .catalogue-page .products-catalogue-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-card {
+    border-radius: 5px !important;
+    box-shadow: 0 8px 18px rgba(6, 38, 36, 0.08) !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-card:hover {
+    transform: none !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-card-visual > a,
+  .catalogue-page .products-catalogue-grid .catalogue-card-visual > span {
+    padding: 3px !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-card-body {
+    padding: 5px 4px !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-meta,
+  .catalogue-page .products-catalogue-grid .catalogue-card p {
+    display: none !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .catalogue-card h3 {
+    margin: 0 0 5px !important;
+    font-size: clamp(8px, 2.35vw, 11px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .catalogue-page .products-catalogue-grid .add-quote {
+    min-height: 24px !important;
+    padding: 0 2px !important;
+    border-radius: 4px !important;
+    font-size: clamp(7px, 2vw, 10px) !important;
+    line-height: 1.1 !important;
+  }
+}

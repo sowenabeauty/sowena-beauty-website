@@ -676,9 +676,11 @@ const renderProducts = () => {
       const selected = selectedProducts.has(id);
       return `
         <article class="catalogue-card reveal is-visible">
-          <div class="catalogue-card-visual">
-            <img src="${product.image}" alt="${product.name}" />
-          </div>
+          <figure class="catalogue-card-visual">
+            <span>
+              <img src="${product.image}" alt="${product.name}" loading="lazy" />
+            </span>
+          </figure>
           <div class="catalogue-card-body">
             <div class="catalogue-meta">
               <span>${product.category}</span>
