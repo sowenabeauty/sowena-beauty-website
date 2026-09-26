@@ -437,6 +437,21 @@ const productImages = {
   "Exocode": "./assets/products/exocode.webp",
   "Exoten": "./assets/products/exoten.webp",
   "Evehilo": "./assets/products/evehilo.webp",
+  "Placentex": "./assets/products/placentex.webp",
+  "Oxyx": "./assets/products/oxyx.webp",
+  "Laennec": "./assets/products/laennec.webp",
+  "Pink Glow": "./assets/products/pink-glow.webp",
+  "Kiara Reju": "./assets/products/kiara-reju.webp",
+  "Aqua PN": "./assets/products/aqua-pn.webp",
+  "Melsmon": "./assets/products/melsmon.webp",
+  "Jalupro Classic": "./assets/products/jalupro-classic.webp",
+  "Jalupro Super Hydro": "./assets/products/jalupro-super-hydro.webp",
+  "Jalupro HMW": "./assets/products/jalupro-hmw.webp",
+  "RRS HA Eyes": "./assets/products/rrs-ha-eyes.webp",
+  "Ceret": "./assets/products/ceret.webp",
+  "Lumi Eyes": "./assets/products/lumi-eyes.webp",
+  "Richese Eyes": "./assets/products/richese-eyes.webp",
+  "Luna Eyes": "./assets/products/luna-eyes.webp",
   // PRODUCT_IMAGES_AUTO_GENERATED_END
 };
 
