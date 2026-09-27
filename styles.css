@@ -2951,7 +2951,7 @@ body.has-offer-popup {
   }
 
   .catalogue-page .products-catalogue-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: 4px !important;
   }
 
