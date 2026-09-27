@@ -57,7 +57,7 @@ a {
   left: 50%;
   z-index: 30;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   width: min(1240px, calc(100% - 36px));
   gap: clamp(14px, 2.4vw, 34px);
@@ -93,6 +93,8 @@ a {
 }
 
 .brand {
+  grid-column: 2;
+  grid-row: 1;
   gap: 10px;
   color: var(--gold-light);
   font-weight: 900;
@@ -111,11 +113,19 @@ a {
 }
 
 .nav {
+  grid-column: 1;
+  grid-row: 1;
   justify-content: center;
   gap: 8px;
   color: #e7bd58;
   font-size: 13px;
   font-weight: 800;
+}
+
+.header-actions {
+  grid-column: 3;
+  grid-row: 1;
+  justify-content: flex-end;
 }
 
 .nav-item {
@@ -2426,9 +2436,21 @@ body.has-offer-popup {
     border-radius: 16px;
   }
 
+  .brand,
+  .nav,
+  .header-actions {
+    grid-column: 1 / -1;
+  }
+
+  .brand {
+    grid-row: 1;
+    justify-content: center;
+  }
+
   .nav {
+    grid-row: 2;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .mega-menu {
@@ -2436,8 +2458,9 @@ body.has-offer-popup {
   }
 
   .header-actions {
+    grid-row: 3;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .header-telegram {
@@ -2538,8 +2561,9 @@ body.has-offer-popup {
   }
 
   .brand {
+    grid-column: 1 / -1;
     width: auto;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .brand-logo {
@@ -2551,7 +2575,7 @@ body.has-offer-popup {
     grid-column: 1 / -1;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 4px;
     font-size: 10px;
   }
