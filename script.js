@@ -594,6 +594,7 @@ const countEl = document.querySelector("[data-results-count]");
 const activeFiltersEl = document.querySelector("[data-active-filters]");
 const clearFilters = document.querySelector("[data-clear-filters]");
 const quickFilters = document.querySelectorAll("[data-quick-filter]");
+const quoteDrawer = document.querySelector("[data-quote-drawer]");
 const quoteCount = document.querySelector("[data-quote-count]");
 const sendQuote = document.querySelector("[data-send-quote]");
 
@@ -624,6 +625,76 @@ const matchesFilters = (product, filters) => {
 };
 
 const productId = (product) => `${product.brand}-${product.name}`.replace(/\s+/g, "-").toLowerCase();
+
+const pulseQuoteDrawer = () => {
+  if (!quoteDrawer) return;
+  quoteDrawer.classList.remove("is-catching");
+  void quoteDrawer.offsetWidth;
+  quoteDrawer.classList.add("is-catching");
+  window.setTimeout(() => quoteDrawer.classList.remove("is-catching"), 560);
+};
+
+const animateProductToQuote = (button) => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const sourceImage = button.closest(".catalogue-card")?.querySelector(".catalogue-card-visual img");
+  const destination = quoteCount || quoteDrawer;
+  if (!sourceImage || !destination) return;
+
+  const sourceRect = sourceImage.getBoundingClientRect();
+  const destinationRect = destination.getBoundingClientRect();
+  if (!sourceRect.width || !sourceRect.height || !destinationRect.width || !destinationRect.height) return;
+
+  const flyingImage = sourceImage.cloneNode(false);
+  flyingImage.removeAttribute("loading");
+  flyingImage.alt = "";
+  flyingImage.setAttribute("aria-hidden", "true");
+  flyingImage.className = "product-fly-to-quote";
+  Object.assign(flyingImage.style, {
+    left: `${sourceRect.left}px`,
+    top: `${sourceRect.top}px`,
+    width: `${sourceRect.width}px`,
+    height: `${sourceRect.height}px`
+  });
+  document.body.appendChild(flyingImage);
+
+  const deltaX = destinationRect.left + destinationRect.width / 2 - (sourceRect.left + sourceRect.width / 2);
+  const deltaY = destinationRect.top + destinationRect.height / 2 - (sourceRect.top + sourceRect.height / 2);
+  const arcY = deltaY * 0.42 - Math.min(90, Math.max(34, sourceRect.height * 0.28));
+
+  if (typeof flyingImage.animate !== "function") {
+    flyingImage.remove();
+    pulseQuoteDrawer();
+    return;
+  }
+
+  const flight = flyingImage.animate(
+    [
+      { transform: "translate3d(0, 0, 0) scale(1) rotate(0deg)", opacity: 1 },
+      {
+        transform: `translate3d(${deltaX * 0.56}px, ${arcY}px, 0) scale(0.66) rotate(-7deg)`,
+        opacity: 0.92,
+        offset: 0.56
+      },
+      {
+        transform: `translate3d(${deltaX}px, ${deltaY}px, 0) scale(0.12) rotate(9deg)`,
+        opacity: 0.08
+      }
+    ],
+    {
+      duration: 680,
+      easing: "cubic-bezier(0.2, 0.82, 0.28, 1)",
+      fill: "forwards"
+    }
+  );
+
+  flight.finished
+    .catch(() => {})
+    .finally(() => {
+      flyingImage.remove();
+      pulseQuoteDrawer();
+    });
+};
 
 const updateQuoteDrawer = () => {
   if (!quoteCount || !sendQuote) return;
@@ -710,7 +781,11 @@ const renderProducts = () => {
   renderActiveFilters(filters);
 
   document.querySelectorAll("[data-product-id]").forEach((button) => {
-    button.addEventListener("click", () => toggleProduct(button.dataset.productId));
+    button.addEventListener("click", () => {
+      const id = button.dataset.productId;
+      if (!selectedProducts.has(id)) animateProductToQuote(button);
+      toggleProduct(id);
+    });
   });
 };
 

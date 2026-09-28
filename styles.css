@@ -1878,6 +1878,45 @@ td strong {
   pointer-events: none;
 }
 
+.product-fly-to-quote {
+  position: fixed;
+  z-index: 110;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.28));
+  will-change: transform, opacity;
+}
+
+.quote-drawer.is-catching {
+  animation: quote-drawer-catch 520ms cubic-bezier(0.2, 0.82, 0.28, 1);
+}
+
+@keyframes quote-drawer-catch {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  42% {
+    transform: translateY(-7px) scale(1.045);
+    box-shadow: 0 26px 68px rgba(216, 173, 71, 0.32);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-fly-to-quote {
+    display: none !important;
+  }
+
+  .quote-drawer.is-catching {
+    animation: none !important;
+  }
+}
+
 .floating-email {
   position: fixed;
   left: 22px;
