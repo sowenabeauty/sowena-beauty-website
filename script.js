@@ -513,6 +513,47 @@ const productImages = {
   // PRODUCT_IMAGES_AUTO_GENERATED_END
 };
 
+const productSales = {
+  "Lemon Bottle": 21,
+  "NCTF (10 Bottles)": 17,
+  "Rejuran Healer New": 21,
+  "Retatrutide 10mg": 16,
+  "NCTF (5 Bottles)": 12,
+  "Mounjaro 2.5mg": 10,
+  "Radiesse": 10,
+  "Skinfill Bacio": 10,
+  "Luthione 12000mg": 8,
+  "Sculptra 2 Vial": 7,
+  "Aqualyx": 5,
+  "Mounjaro 5mg": 5,
+  "Mounjaro 7.5mg": 5,
+  "Profhilo H+L": 5,
+  "Teoxan 1": 5,
+  "LRI Pro": 4,
+  "Rejuran S New": 4,
+  "Cindella Set": 3,
+  "Luhilo": 3,
+  "Luhilo Snow": 3,
+  "Pink Glow": 3,
+  "Rejuran Healer Old": 3,
+  "Glutanex Drip Set": 2,
+  "Glutathion 1200mg": 2,
+  "Retatrutide 60mg": 2,
+  "Juvederm Skinvive": 2,
+  "Botulax 100": 1,
+  "Juvelook": 1,
+  "Karisma": 1,
+  "Mounjaro 10mg": 1,
+  "Mounjaro 12.5mg": 1,
+  "Mounjaro 15mg": 1,
+  "Nabota 100": 1,
+  "Neuronox 200": 1,
+  "Rejuran HB New": 1,
+  "Retatrutide 30mg": 1,
+  "Sculptra 1 Vial": 1,
+  "Tirzepatide 30mg": 1
+};
+
 const brandAliases = [
   "Juvederm",
   "Restylane",
@@ -551,13 +592,18 @@ const inferBrand = (name) =>
 const inferOrigin = (name) =>
   originAliases.find((item) => item.match.test(name))?.origin || "Korea";
 
+let productOrder = 0;
+
 const products = Object.entries(rawCatalogue).flatMap(([category, names]) =>
   names.map((name) => ({
     name,
     category,
     brand: inferBrand(name),
     origin: inferOrigin(name),
-    image: productImages[name] || categoryImages[category]
+    image: productImages[name] || categoryImages[category],
+    hasCustomImage: Boolean(productImages[name]),
+    sales: productSales[name] || 0,
+    priorityIndex: productOrder++
   }))
 );
 
@@ -625,6 +671,46 @@ const matchesFilters = (product, filters) => {
 };
 
 const productId = (product) => `${product.brand}-${product.name}`.replace(/\s+/g, "-").toLowerCase();
+
+const productClickStorageKey = "sowenaProductClickCounts";
+
+const readProductClickCounts = () => {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(productClickStorageKey) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+};
+
+const productClickCounts = readProductClickCounts();
+
+const getProductClickCount = (product) => Number(productClickCounts[productId(product)] || 0);
+
+const trackProductClick = (product) => {
+  if (!product) return;
+  const id = productId(product);
+  productClickCounts[id] = getProductClickCount(product) + 1;
+  try {
+    localStorage.setItem(productClickStorageKey, JSON.stringify(productClickCounts));
+  } catch {
+    // Local storage can be unavailable in private modes; sorting still works without click history.
+  }
+};
+
+const sortProductsByPriority = (items) =>
+  [...items].sort((a, b) => {
+    const imageRank = Number(b.hasCustomImage) - Number(a.hasCustomImage);
+    if (imageRank) return imageRank;
+
+    const salesRank = b.sales - a.sales;
+    if (salesRank) return salesRank;
+
+    const clickRank = getProductClickCount(b) - getProductClickCount(a);
+    if (clickRank) return clickRank;
+
+    return a.priorityIndex - b.priorityIndex;
+  });
 
 const pulseQuoteDrawer = () => {
   if (!quoteDrawer) return;
@@ -731,7 +817,7 @@ const renderActiveFilters = (filters) => {
 const renderProducts = () => {
   if (!grid) return;
   const filters = getFilters();
-  const filtered = products.filter((product) => matchesFilters(product, filters));
+  const filtered = sortProductsByPriority(products.filter((product) => matchesFilters(product, filters)));
 
   grid.innerHTML = filtered
     .map((product) => {
@@ -783,7 +869,11 @@ const renderProducts = () => {
   document.querySelectorAll("[data-product-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const id = button.dataset.productId;
-      if (!selectedProducts.has(id)) animateProductToQuote(button);
+      const product = products.find((item) => productId(item) === id);
+      if (!selectedProducts.has(id)) {
+        trackProductClick(product);
+        animateProductToQuote(button);
+      }
       toggleProduct(id);
     });
   });
