@@ -422,15 +422,6 @@ const rawCatalogue = {
   ]
 };
 
-const categoryDescriptions = {
-  "Dermal Filler": "Dermal filler and biostimulator item from the Sowena catalogue.",
-  "Botulinum Toxin": "Botulinum toxin product listing for quotation and availability confirmation.",
-  "Fat Dissolving / Weight Loss": "Fat dissolving and weight-loss solution listed for professional enquiry.",
-  "IV Whitening Drip": "IV whitening drip and brightening support product from the Sowena catalogue.",
-  "Meso / Skin Booster": "Meso, PN, PDRN and skin booster item for professional aesthetic supply requests.",
-  "Topical Anaesthetic": "Topical anaesthetic and procedure-support item from the Sowena catalogue."
-};
-
 const categoryImages = {
   "Dermal Filler": "./assets/sowena-hero.png",
   "Botulinum Toxin": "./assets/sowena-hero.png",
@@ -566,7 +557,6 @@ const products = Object.entries(rawCatalogue).flatMap(([category, names]) =>
     category,
     brand: inferBrand(name),
     origin: inferOrigin(name),
-    description: categoryDescriptions[category],
     image: productImages[name] || categoryImages[category]
   }))
 );
@@ -689,7 +679,6 @@ const renderProducts = () => {
               <span>${product.origin}</span>
             </div>
             <h3>${product.name}</h3>
-            <p>${product.description}</p>
             <button class="add-quote ${selected ? "is-selected" : ""}" data-product-id="${id}" type="button">
               ${selected ? "Selected" : "Add to quote"}
             </button>
