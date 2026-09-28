@@ -666,7 +666,7 @@ const renderActiveFilters = (filters) => {
 };
 
 const renderProducts = () => {
-  if (!grid || !tableBody) return;
+  if (!grid) return;
   const filters = getFilters();
   const filtered = products.filter((product) => matchesFilters(product, filters));
 
@@ -697,21 +697,23 @@ const renderProducts = () => {
     })
     .join("");
 
-  tableBody.innerHTML = filtered
-    .map((product) => {
-      const id = productId(product);
-      const selected = selectedProducts.has(id);
-      return `
-        <tr>
-          <td><strong>${product.name}</strong></td>
-          <td>${product.category}</td>
-          <td>${product.brand}</td>
-          <td>${product.origin}</td>
-          <td><button class="table-action" data-product-id="${id}" type="button">${selected ? "Selected" : "Add"}</button></td>
-        </tr>
-      `;
-    })
-    .join("");
+  if (tableBody) {
+    tableBody.innerHTML = filtered
+      .map((product) => {
+        const id = productId(product);
+        const selected = selectedProducts.has(id);
+        return `
+          <tr>
+            <td><strong>${product.name}</strong></td>
+            <td>${product.category}</td>
+            <td>${product.brand}</td>
+            <td>${product.origin}</td>
+            <td><button class="table-action" data-product-id="${id}" type="button">${selected ? "Selected" : "Add"}</button></td>
+          </tr>
+        `;
+      })
+      .join("");
+  }
 
   if (countEl) countEl.textContent = `${filtered.length} products found`;
   renderActiveFilters(filters);
