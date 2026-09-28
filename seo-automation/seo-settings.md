@@ -27,10 +27,11 @@ Prioritize all product categories currently contained in the website catalogue:
 
 ## Publishing cadence
 
-- Frequency: 3 blog articles per week
-- Days: Monday, Wednesday, Friday
+- Frequency: 1 blog article per day
+- Planning rule: keep the next 7 days drafted or scheduled in advance
 - Time: 8:00 PM Vietnam time
 - Timezone: Asia/Ho_Chi_Minh
+- Ordering rule: publish products with available product media first, following the website catalogue category order
 
 ## Conversion goal
 
