@@ -2183,11 +2183,32 @@ body.has-offer-popup {
   display: grid;
   gap: 16px;
   min-height: 280px;
-  padding: 26px;
+  overflow: hidden;
+  padding: 0;
   border: 1px solid rgba(7, 72, 68, 0.12);
   border-radius: 8px;
   background: #fffaf0;
   box-shadow: 0 18px 48px rgba(7, 72, 68, 0.08);
+}
+
+.blog-card-media {
+  display: block;
+  padding: 18px 18px 0;
+}
+
+.blog-card-media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.blog-card-body {
+  display: grid;
+  gap: 16px;
+  height: 100%;
+  padding: 0 26px 26px;
 }
 
 .blog-card span,
@@ -2228,6 +2249,29 @@ body.has-offer-popup {
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 18px;
+}
+
+.blog-article-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 420px);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+
+.blog-article-hero-media {
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(255, 232, 166, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 250, 240, 0.92);
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.18);
+}
+
+.blog-article-hero-media img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
 }
 
 .blog-article-layout {
@@ -2897,6 +2941,7 @@ body.has-offer-popup {
   .blog-card-grid,
   .blog-link-grid,
   .blog-product-media-grid,
+  .blog-article-hero-grid,
   .products-catalogue-grid,
   .product-tools {
     grid-template-columns: 1fr;
