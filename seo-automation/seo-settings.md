@@ -25,6 +25,15 @@ Prioritize all product categories currently contained in the website catalogue:
 5. Meso / Skin Booster
 6. Topical Anaesthetic
 
+## Product image source
+
+- Product background images must only come from:
+  `C:\Users\This PC\Downloads\SOWENA BEAUTY GLOBAL\ẢNH WEB SẢN PHẨM\`
+- Search this folder recursively, including category subfolders.
+- Copy approved images into `assets/products/` before referencing them in HTML, metadata, or blog cards.
+- Do not use web image search, hotlinked images, manufacturer website images, third-party distributor images, Telegram images, or generated images as product background images unless the user first supplies/approves them and they are saved into the approved source folder.
+- If no matching image exists in the approved source folder, skip the product and mark the queue note as `Needs approved product background image`.
+
 ## Publishing cadence
 
 - Frequency: 1 blog article per day
