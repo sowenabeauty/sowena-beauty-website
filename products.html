@@ -30,8 +30,8 @@
     <meta name="twitter:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=quote-flight-20260929" />
-    <script src="./script.js?v=quote-no-flash-20260929" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=mobile-filter-20260930" />
+    <script src="./script.js?v=mobile-filter-20260930" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -177,18 +177,20 @@
                 placeholder="Search product, brand, category or origin..."
               />
             </label>
-            <label>
-              <span>Category</span>
-              <select class="select" data-category-filter></select>
-            </label>
-            <label>
-              <span>Brand</span>
-              <select class="select" data-brand-filter></select>
-            </label>
-            <label>
-              <span>Origin</span>
-              <select class="select" data-origin-filter></select>
-            </label>
+            <div class="advanced-filters" id="catalogue-advanced-filters" data-advanced-filters>
+              <label>
+                <span>Category</span>
+                <select class="select" data-category-filter></select>
+              </label>
+              <label>
+                <span>Brand</span>
+                <select class="select" data-brand-filter></select>
+              </label>
+              <label>
+                <span>Origin</span>
+                <select class="select" data-origin-filter></select>
+              </label>
+            </div>
           </div>
 
           <div class="quick-filters" aria-label="Quick filters">
@@ -200,6 +202,17 @@
             <button type="button" data-quick-filter="Meso / Skin Booster">Meso / skin booster</button>
             <button type="button" data-quick-filter="Topical Anaesthetic">Topical anaesthetic</button>
           </div>
+
+          <button
+            class="mobile-filter-toggle"
+            data-mobile-filter-toggle
+            type="button"
+            aria-expanded="false"
+            aria-controls="catalogue-advanced-filters"
+          >
+            <span>More filters</span>
+            <span class="mobile-filter-chevron" aria-hidden="true">⌄</span>
+          </button>
 
           <div class="results-bar">
             <span data-results-count></span>

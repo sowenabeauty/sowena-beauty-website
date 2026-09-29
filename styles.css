@@ -1650,6 +1650,14 @@ p {
   margin-bottom: 18px;
 }
 
+.advanced-filters {
+  display: contents;
+}
+
+.mobile-filter-toggle {
+  display: none;
+}
+
 .product-tools label {
   display: grid;
   gap: 7px;
@@ -3023,6 +3031,197 @@ body.has-offer-popup {
     right: 14px;
     bottom: 14px;
     min-width: 0;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .catalogue-page {
+    padding-bottom: 190px;
+  }
+
+  .catalogue-page .product-filter-panel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    padding: 14px 12px 12px;
+    overflow: visible;
+  }
+
+  .catalogue-page .filter-panel-head {
+    order: 0;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .catalogue-page .filter-panel-head > div {
+    min-width: 0;
+  }
+
+  .catalogue-page .filter-panel-head .eyebrow {
+    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .catalogue-page .filter-panel-head h2 {
+    font-size: clamp(20px, 6.2vw, 24px);
+    line-height: 1.08;
+  }
+
+  .catalogue-page .clear-filters {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .catalogue-page .product-tools {
+    display: contents;
+  }
+
+  .catalogue-page .product-tools .search-field {
+    order: 1;
+    gap: 4px;
+  }
+
+  .catalogue-page .product-tools label {
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .catalogue-page .input,
+  .catalogue-page .select {
+    min-height: 42px;
+    padding: 0 11px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .catalogue-page .quick-filters {
+    order: 2;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin: 9px -12px 0;
+    padding: 0 12px 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .catalogue-page .quick-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalogue-page .quick-filters button {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0 11px;
+    font-size: 11px;
+    scroll-snap-align: start;
+  }
+
+  .catalogue-page .mobile-filter-toggle {
+    order: 3;
+    display: inline-flex;
+    width: 100%;
+    min-height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding: 0 12px;
+    border: 1px solid rgba(0, 107, 103, 0.18);
+    border-radius: 8px;
+    color: var(--teal-dark);
+    background: rgba(255, 255, 255, 0.64);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .catalogue-page .mobile-filter-chevron {
+    color: var(--gold-deep);
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 220ms ease;
+  }
+
+  .catalogue-page .mobile-filter-toggle[aria-expanded="true"] .mobile-filter-chevron {
+    transform: rotate(180deg);
+  }
+
+  .catalogue-page .advanced-filters {
+    order: 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      max-height 240ms ease,
+      margin-top 240ms ease,
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 0s linear 240ms;
+  }
+
+  .catalogue-page .advanced-filters.is-open {
+    max-height: 220px;
+    margin-top: 9px;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+
+  .catalogue-page .results-bar {
+    order: 5;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 9px;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .catalogue-page .active-filters {
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .catalogue-page .active-filters span {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .catalogue-page .quote-drawer {
+    right: max(10px, env(safe-area-inset-right));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    gap: 8px;
+    max-width: min(200px, calc(100vw - 138px));
+    padding: 10px;
+  }
+
+  .catalogue-page .quote-drawer .button {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .catalogue-page .floating-email {
+    left: max(10px, env(safe-area-inset-left));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 10px;
   }
 }
 
