@@ -2284,7 +2284,8 @@ body.has-offer-popup {
 
 .blog-article-hero-media img {
   display: block;
-  width: auto;
+  width: 100%;
+  height: auto;
   max-width: 100%;
   max-height: none;
   object-fit: contain;
@@ -2357,6 +2358,7 @@ body.has-offer-popup {
 
 .blog-product-media img {
   width: 100%;
+  height: auto;
   display: block;
   object-fit: contain;
 }
