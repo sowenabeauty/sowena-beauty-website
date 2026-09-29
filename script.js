@@ -794,13 +794,31 @@ const updateQuoteDrawer = () => {
       : `https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%0AI%20would%20like%20to%20request%20a%20quotation%20for%3A%0A${body}`;
 };
 
+const updateProductSelectionButtons = (id) => {
+  const selected = selectedProducts.has(id);
+
+  document.querySelectorAll("[data-product-id]").forEach((button) => {
+    if (button.dataset.productId !== id) return;
+
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    button.textContent = button.classList.contains("table-action")
+      ? selected
+        ? "Selected"
+        : "Add"
+      : selected
+        ? "Selected"
+        : "Add to quote";
+  });
+};
+
 const toggleProduct = (id) => {
   if (selectedProducts.has(id)) {
     selectedProducts.delete(id);
   } else {
     selectedProducts.add(id);
   }
-  renderProducts();
+  updateProductSelectionButtons(id);
   updateQuoteDrawer();
 };
 
@@ -836,7 +854,7 @@ const renderProducts = () => {
               <span>${product.origin}</span>
             </div>
             <h3>${product.name}</h3>
-            <button class="add-quote ${selected ? "is-selected" : ""}" data-product-id="${id}" type="button">
+            <button class="add-quote ${selected ? "is-selected" : ""}" data-product-id="${id}" type="button" aria-pressed="${selected}">
               ${selected ? "Selected" : "Add to quote"}
             </button>
           </div>
@@ -856,7 +874,7 @@ const renderProducts = () => {
             <td>${product.category}</td>
             <td>${product.brand}</td>
             <td>${product.origin}</td>
-            <td><button class="table-action" data-product-id="${id}" type="button">${selected ? "Selected" : "Add"}</button></td>
+            <td><button class="table-action" data-product-id="${id}" type="button" aria-pressed="${selected}">${selected ? "Selected" : "Add"}</button></td>
           </tr>
         `;
       })
