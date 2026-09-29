@@ -582,12 +582,22 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 180px;
+  bottom: -1px;
+  height: clamp(210px, 20vw, 360px);
   border-radius: 0;
   background:
-    linear-gradient(180deg, rgba(0, 55, 52, 0) 0%, rgba(0, 55, 52, 0.28) 18%, rgba(255, 254, 249, 0.68) 68%, #fffef9 100%),
-    radial-gradient(ellipse at 50% 18%, rgba(255, 232, 166, 0.12), transparent 62%);
+    linear-gradient(
+      180deg,
+      rgba(0, 55, 52, 0) 0%,
+      rgba(0, 55, 52, 0.16) 24%,
+      rgba(72, 123, 115, 0.22) 44%,
+      rgba(182, 208, 195, 0.3) 63%,
+      rgba(246, 249, 239, 0.72) 84%,
+      #fffef9 100%
+    ),
+    radial-gradient(ellipse at 50% 36%, rgba(255, 232, 166, 0.08), transparent 58%),
+    radial-gradient(ellipse at 18% 78%, rgba(157, 207, 181, 0.18), transparent 56%),
+    radial-gradient(ellipse at 84% 82%, rgba(255, 254, 249, 0.5), transparent 52%);
   content: "";
   pointer-events: none;
   z-index: 2;
