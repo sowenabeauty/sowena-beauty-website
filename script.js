@@ -642,6 +642,7 @@ const clearFilters = document.querySelector("[data-clear-filters]");
 const quickFilters = document.querySelectorAll("[data-quick-filter]");
 const mobileFilterToggle = document.querySelector("[data-mobile-filter-toggle]");
 const advancedFilters = document.querySelector("[data-advanced-filters]");
+const catalogueFilterPanel = document.querySelector(".product-filter-panel");
 const quoteDrawer = document.querySelector("[data-quote-drawer]");
 const quoteCount = document.querySelector("[data-quote-count]");
 const sendQuote = document.querySelector("[data-send-quote]");
@@ -923,6 +924,14 @@ if (grid) {
     mobileFilterToggle.setAttribute("aria-expanded", String(!expanded));
     advancedFilters?.classList.toggle("is-open", !expanded);
   });
+
+  if (catalogueFilterPanel && "IntersectionObserver" in window) {
+    const filterVisibilityObserver = new IntersectionObserver(
+      ([entry]) => document.body.classList.toggle("catalogue-filter-in-view", entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    filterVisibilityObserver.observe(catalogueFilterPanel);
+  }
 
   clearFilters?.addEventListener("click", () => {
     if (searchInput) searchInput.value = "";

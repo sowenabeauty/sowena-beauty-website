@@ -3223,6 +3223,32 @@ body.has-offer-popup {
     padding: 0 13px;
     font-size: 10px;
   }
+
+  .catalogue-page .floating-contact-widget,
+  .catalogue-page .quote-drawer,
+  .catalogue-page .floating-email {
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  .catalogue-page.catalogue-filter-in-view .floating-contact-widget,
+  .catalogue-page.catalogue-filter-in-view .quote-drawer,
+  .catalogue-page.catalogue-filter-in-view .floating-email {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(100% + 24px));
+  }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .catalogue-page .advanced-filters,
+  .catalogue-page .mobile-filter-chevron,
+  .catalogue-page .floating-contact-widget,
+  .catalogue-page .quote-drawer,
+  .catalogue-page .floating-email {
+    transition: none;
+  }
 }
 
 /* Product catalogue: fixed five-column grid and square non-cropping image frames. */
