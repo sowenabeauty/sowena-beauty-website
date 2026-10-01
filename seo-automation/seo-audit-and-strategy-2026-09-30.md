@@ -129,6 +129,8 @@ Audit, select, research, verify image, outline, write, fact-check, add links, op
 
 After article 100, bulk mode ends automatically. The maintenance limit is one new article per day, with updates prioritized when an existing page already satisfies the same intent.
 
+Campaign extension approved on 2026-10-01: publish 100 additional articles from 2026-10-02 onward at a maximum of one article per day. Complete roadmap items SEO-003 through SEO-100 first, then add two unique content-gap articles as SEO-101 and SEO-102 so the extension contains exactly 100 newly published articles. Progress is tracked in `seo-100-article-campaign.csv`.
+
 ## 11. Technical SEO checklist
 
 - One H1
