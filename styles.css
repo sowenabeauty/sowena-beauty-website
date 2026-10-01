@@ -2166,6 +2166,11 @@ body.has-offer-popup {
   line-height: 0.96;
 }
 
+.blog-article-title--compact h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.02;
+}
+
 .blog-hero p,
 .blog-article-title p {
   max-width: 720px;
