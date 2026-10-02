@@ -1,2 +1,2 @@
 campaign_id,start_date,target_articles,published_count,remaining_articles,next_roadmap_id,status,last_published_url,notes
-seo-growth-100-2026-10-02,2026-10-02,100,0,100,SEO-003,ACTIVE,,VS PNAD+ prepared and awaiting live HTTP verification. Increment only after deployment returns HTTP 200.
+seo-growth-100-2026-10-02,2026-10-02,100,1,99,SEO-004,ACTIVE,https://www.sowenabeauty.com/blog/vs-pnad-plus-professional-guide.html,VS PNAD+ published and verified HTTP 200 on 2026-10-03. Continue with SEO-004 and publish no more than one article per Vietnam calendar day.
