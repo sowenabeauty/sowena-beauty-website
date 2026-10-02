@@ -1,2 +1,2 @@
 campaign_id,start_date,target_articles,published_count,remaining_articles,next_roadmap_id,status,last_published_url,notes
-seo-growth-100-2026-10-02,2026-10-02,100,0,100,SEO-003,ACTIVE,,Publish one validated English SEO article per day at 20:00 Vietnam time. Finish SEO-003 through SEO-100 first; then add two unique content-gap articles as SEO-101 and SEO-102.
+seo-growth-100-2026-10-02,2026-10-02,100,0,100,SEO-003,ACTIVE,,VS PNAD+ prepared and awaiting live HTTP verification. Increment only after deployment returns HTTP 200.
