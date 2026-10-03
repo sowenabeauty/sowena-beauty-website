@@ -5,12 +5,12 @@ Published,3,Meso / Skin Booster,Puri Lips,assets/products/puri-lips.png,puri-lip
 Published,4,Meso / Skin Booster,VS NAD+,assets/products/vs-nad-approved.webp,vs-nad-plus-professional-guide,2026-09-30,20:00,vs nad professional product guide,Published with approved Sowena artwork; official Victoria Sun source and independent PubMed context included
 Published,5,Meso / Skin Booster,VS Vitathione NAD+,assets/products/vs-vitathione-nad-approved.webp,vs-vitathione-nad-plus-skin-glow-guide,2026-10-01,20:00,vs vitathione nad ingredients,Published with approved Sowena artwork; official dedicated product page not available so only the official Victoria Sun company website is linked
 Published,6,Meso / Skin Booster,VS PNAD+,assets/products/vs-pnad-approved.webp,vs-pnad-plus-professional-guide,2026-10-03,00:02,vs pnad plus guide,Published with approved Sowena artwork; official dedicated product page not found; Victoria Sun company source and two independent PubMed reviews included
-Planned,7,Meso / Skin Booster,VS Collagen NAD+,assets/products/vs-collagen-nad.webp,vs-collagen-nad-wholesale-sourcing,2026-10-04,20:00,vs collagen nad wholesale,Use product image
-Planned,8,Meso / Skin Booster,VS Multi-lamellar NAD+,assets/products/vs-multi-lamellar-nad.webp,vs-multi-lamellar-nad-wholesale-sourcing,2026-10-06,20:00,vs multi lamellar nad wholesale,Use product image; SEO-006 in master roadmap
-Planned,9,Meso / Skin Booster,VS Toxnad NAD+,assets/products/vs-toxnad-nad.webp,vs-toxnad-nad-wholesale-sourcing,2026-10-07,20:00,vs toxnad nad wholesale,Use product image; SEO-007 in master roadmap
-Queued,10,Meso / Skin Booster,Complex ASCE,assets/products/complex-asce.webp,complex-asce-wholesale-sourcing,,,complex asce wholesale,Continue in exact master-roadmap order
-Queued,11,Meso / Skin Booster,Profhilo H+L,assets/products/profhilo-h-l.webp,profhilo-h-l-wholesale-sourcing,,,profhilo h l wholesale,Use approved product image; needs keyword volume validation
-Queued,12,Meso / Skin Booster,Puri PDRN,assets/products/puri-pdrn.webp,puri-pdrn-wholesale-sourcing,,,puri pdrn wholesale,Use approved product image; needs keyword volume validation
-Queued,13,Meso / Skin Booster,Hyaron,assets/products/hyaron.webp,hyaron-wholesale-sourcing,,,hyaron wholesale,Continue in exact master-roadmap order
-Queued,14,Meso / Skin Booster,Jariot Baby Face,assets/products/jariot-baby-face.webp,jariot-baby-face-wholesale-sourcing,,,jariot baby face wholesale,Continue after first scheduled week
-Queued,15,Meso / Skin Booster,Luhilo,assets/products/luhilo.webp,luhilo-wholesale-sourcing,,,luhilo wholesale,Continue after first scheduled week
+Batch Hold,7,Meso / Skin Booster,VS Collagen NAD+,assets/products/vs-collagen-nad.webp,vs-collagen-nad-wholesale-sourcing,,,vs collagen nad wholesale,Hold for one-time batch publication
+Batch Hold,8,Meso / Skin Booster,VS Multi-lamellar NAD+,assets/products/vs-multi-lamellar-nad.webp,vs-multi-lamellar-nad-wholesale-sourcing,,,vs multi lamellar nad wholesale,Hold for one-time batch publication; SEO-006 in master roadmap
+Batch Hold,9,Meso / Skin Booster,VS Toxnad NAD+,assets/products/vs-toxnad-nad.webp,vs-toxnad-nad-wholesale-sourcing,,,vs toxnad nad wholesale,Hold for one-time batch publication; SEO-007 in master roadmap
+Batch Hold,10,Meso / Skin Booster,Complex ASCE,assets/products/complex-asce.webp,complex-asce-wholesale-sourcing,,,complex asce wholesale,Needs approved product background image before batch publication
+Batch Hold,11,Meso / Skin Booster,Profhilo H+L,assets/products/profhilo-h-l.webp,profhilo-h-l-wholesale-sourcing,,,profhilo h l wholesale,Needs approved product background image before batch publication
+Batch Hold,12,Meso / Skin Booster,Puri PDRN,assets/products/puri-pdrn.webp,puri-pdrn-wholesale-sourcing,,,puri pdrn wholesale,Hold for one-time batch publication
+Batch Hold,13,Meso / Skin Booster,Hyaron,assets/products/hyaron.webp,hyaron-wholesale-sourcing,,,hyaron wholesale,Hold for one-time batch publication
+Batch Hold,14,Meso / Skin Booster,Jariot Baby Face,assets/products/jariot-baby-face.webp,jariot-baby-face-wholesale-sourcing,,,jariot baby face wholesale,Hold for one-time batch publication
+Batch Hold,15,Meso / Skin Booster,Luhilo,assets/products/luhilo.webp,luhilo-wholesale-sourcing,,,luhilo wholesale,Hold for one-time batch publication
