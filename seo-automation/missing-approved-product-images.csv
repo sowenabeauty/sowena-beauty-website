@@ -1,38 +1,38 @@
-roadmap_id,product,scheduled_date,status,required_action
-SEO-026,Profhilo H+L,2026-10-26,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-046,Complex ASCE,2026-11-15,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-052,Juvelook,2026-11-21,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-053,Gouri,2026-11-22,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-054,Olidia PLLA,2026-11-23,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-056,Neuramis,2026-11-25,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-057,Revolax,2026-11-26,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-058,Dermalax,2026-11-27,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-059,Chaeum,2026-11-28,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-061,Juvederm Voluma,2026-11-30,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-062,Restylane Defyne,2026-12-01,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-063,Restylane Refyne,2026-12-02,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-064,Stylage Vivacy,2026-12-03,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-066,Restylane Kysse,2026-12-05,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-067,Juvederm Vobela,2026-12-06,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-068,EPTQ,2026-12-07,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-069,Elasty,2026-12-08,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-071,Jariot Body,2026-12-10,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-072,Helios Body,2026-12-11,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-073,Maxxyfill Body,2026-12-12,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-074,Sedy Fill Body,2026-12-13,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-076,Nabota 100,2026-12-15,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-077,Botulax 100,2026-12-16,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-078,Innotox 50,2026-12-17,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-079,Xeomin,2026-12-18,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-081,Wondertox 100,2026-12-20,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-082,Hutox 100,2026-12-21,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-083,Coretox 100,2026-12-22,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-084,Toxta 100,2026-12-23,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-086,Aqualyx,2026-12-25,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-087,Lipolab,2026-12-26,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-088,Lemon Bottle,2026-12-27,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-089,Kabelline,2026-12-28,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-091,Korean Medicaine,2026-12-30,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-092,J Cain 10.56%,2026-12-31,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-093,M-Caine Cream,2027-01-01,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
-SEO-094,Lidocaine Cream,2027-01-02,Needs approved product background image,Add a matching clean product image to the approved source folder before the scheduled run
+﻿roadmap_id,product,scheduled_date,status,required_action
+SEO-026,Profhilo H+L,2026-10-26,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-046,Complex ASCE,2026-11-15,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-052,Juvelook,2026-11-21,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-053,Gouri,2026-11-22,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-054,Olidia PLLA,2026-11-23,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-056,Neuramis,2026-11-25,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-057,Revolax,2026-11-26,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-058,Dermalax,2026-11-27,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-059,Chaeum,2026-11-28,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-061,Juvederm Voluma,2026-11-30,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-062,Restylane Defyne,2026-12-01,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-063,Restylane Refyne,2026-12-02,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-064,Stylage Vivacy,2026-12-03,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-066,Restylane Kysse,2026-12-05,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-067,Juvederm Vobela,2026-12-06,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-068,EPTQ,2026-12-07,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-069,Elasty,2026-12-08,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-071,Jariot Body,2026-12-10,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-072,Helios Body,2026-12-11,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-073,Maxxyfill Body,2026-12-12,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-074,Sedy Fill Body,2026-12-13,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-076,Nabota 100,2026-12-15,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-077,Botulax 100,2026-12-16,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-078,Innotox 50,2026-12-17,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-079,Xeomin,2026-12-18,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-081,Wondertox 100,2026-12-20,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-082,Hutox 100,2026-12-21,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-083,Coretox 100,2026-12-22,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-084,Toxta 100,2026-12-23,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-086,Aqualyx,2026-12-25,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-087,Lipolab,2026-12-26,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-088,Lemon Bottle,2026-12-27,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-089,Kabelline,2026-12-28,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-091,Korean Medicaine,2026-12-30,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-092,J Cain 10.56%,2026-12-31,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-093,M-Caine Cream,2027-01-01,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
+SEO-094,Lidocaine Cream,2027-01-02,Published with GPT editorial cover; product photo pending,Optional: replace the editorial cover after an approved clean product photograph is supplied
