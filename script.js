@@ -316,12 +316,16 @@ const rawCatalogue = {
     "Glutax 1000000",
     "Glutax 2200000",
     "Glutax 3500000",
+    "Glutax 5GS Micro",
     "Laroscorbine",
     "Placenta Collagen",
     "Lucchini",
     "Guthione 1200mg",
     "Glutathion 1200mg",
-    "Luthione 12000mg"
+    "Luthione 12000mg",
+    "Mixing Pink Glow",
+    "Shiratama Beyoncé SP Drip",
+    "TAD 600mg/4ml"
   ],
   "Meso / Skin Booster": [
     "Skinfill Bacio",
@@ -334,6 +338,7 @@ const rawCatalogue = {
     "VS Toxnad NAD+",
     "Complex ASCE",
     "Profhilo H+L",
+    "Plenhyage XL",
     "Rubytoxin 100",
     "Puri PDRN",
     "Hyaron",
@@ -433,6 +438,23 @@ const categoryImages = {
 
 const productImages = {
   // PRODUCT_IMAGES_AUTO_GENERATED_START
+  "Cindella Set": "./assets/products/cindella-set.webp",
+  "Glutanex Drip Set": "./assets/products/glutanex-drip-set.webp",
+  "Snow White": "./assets/products/snow-white.webp",
+  "Glutax 1000000": "./assets/products/glutax-1000000.webp",
+  "Glutax 2200000": "./assets/products/glutax-2200000.webp",
+  "Glutax 3500000": "./assets/products/glutax-3500000.webp",
+  "Glutax 5GS Micro": "./assets/products/glutax-5gs-micro.webp",
+  "Laroscorbine": "./assets/products/laroscorbine.webp",
+  "Placenta Collagen": "./assets/products/placenta-collagen.webp",
+  "Lucchini": "./assets/products/lucchini.webp",
+  "Guthione 1200mg": "./assets/products/guthione-1200mg.webp",
+  "Glutathion 1200mg": "./assets/products/glutathion-1200mg.webp",
+  "Luthione 12000mg": "./assets/products/luthione-12000mg.webp",
+  "Mixing Pink Glow": "./assets/products/mixing-pink-glow.webp",
+  "Shiratama Beyoncé SP Drip": "./assets/products/shiratama-beyonce-sp-drip.webp",
+  "TAD 600mg/4ml": "./assets/products/tad-600mg-4ml.webp",
+  "Plenhyage XL": "./assets/products/plenhyage-xl.webp",
   "Skinfill Bacio": "./assets/products/skinfill-bacio.webp",
   "Puri Lips": "./assets/products/puri-lips.webp",
   "VS NAD+": "./assets/products/vs-nad.webp",
@@ -585,12 +607,22 @@ const originAliases = [
   { match: /restylane|dysport|sculptra|radiesse|stylage|vivacy|teoxan|teoxane|jalupro|aqualyx|french|france/i, origin: "Europe" }
 ];
 
+const productOriginOverrides = {
+  "Glutax 5GS Micro": "Italy",
+  "Mixing Pink Glow": "Switzerland",
+  "Shiratama Beyoncé SP Drip": "Japan",
+  "TAD 600mg/4ml": "Italy",
+  "Plenhyage XL": "Italy"
+};
+
 const inferBrand = (name) =>
   brandAliases.find((brand) => name.toLowerCase().startsWith(brand.toLowerCase())) ||
   name.split(" ")[0];
 
 const inferOrigin = (name) =>
-  originAliases.find((item) => item.match.test(name))?.origin || "Korea";
+  productOriginOverrides[name] ||
+  originAliases.find((item) => item.match.test(name))?.origin ||
+  "Korea";
 
 let productOrder = 0;
 
