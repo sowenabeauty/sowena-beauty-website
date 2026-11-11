@@ -1311,7 +1311,9 @@ p {
 }
 
 .product-card img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: contain;
   object-position: center;
