@@ -719,6 +719,35 @@ revealItems.forEach((item) => revealObserver.observe(item));
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
+const blogMoreCards = [...document.querySelectorAll("[data-blog-more-card]")];
+const blogLoadMoreButton = document.querySelector("[data-blog-load-more]");
+
+if (blogMoreCards.length && blogLoadMoreButton) {
+  const mobileBlogQuery = window.matchMedia("(max-width: 620px)");
+  const pageSize = mobileBlogQuery.matches ? 8 : 12;
+  let visibleBlogCards = pageSize;
+
+  const updateBlogLibrary = () => {
+    blogMoreCards.forEach((card, index) => {
+      card.hidden = index >= visibleBlogCards;
+    });
+
+    const remaining = Math.max(0, blogMoreCards.length - visibleBlogCards);
+    blogLoadMoreButton.hidden = remaining === 0;
+    blogLoadMoreButton.textContent = remaining
+      ? `Load more articles (${remaining})`
+      : "All articles loaded";
+    blogLoadMoreButton.setAttribute("aria-expanded", String(remaining === 0));
+  };
+
+  blogLoadMoreButton.addEventListener("click", () => {
+    visibleBlogCards += pageSize;
+    updateBlogLibrary();
+  });
+
+  updateBlogLibrary();
+}
+
 const grid = document.querySelector("[data-products-grid]");
 const tableBody = document.querySelector("[data-products-table]");
 const searchInput = document.querySelector("[data-search]");
