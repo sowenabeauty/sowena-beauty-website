@@ -31,7 +31,7 @@
     <meta name="twitter:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=outro-cover-20261111" />
+    <link rel="stylesheet" href="./styles.css?v=featured-mobile-slider-20261111" />
     <script src="./script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -366,7 +366,8 @@
           <h2>Featured products</h2>
         </div>
 
-        <div class="product-grid">
+        <div class="featured-carousel" data-featured-carousel>
+          <div class="product-grid" data-featured-slider>
           <article class="product-card">
             <img
               src="./assets/featured/rejuran-healer-2-7ml.webp"
@@ -451,6 +452,35 @@
               <a href="https://wa.me/84961751956?text=Hello%20Sowena%20Beauty%2C%20I%20would%20like%20to%20ask%20about%20Luhilo." target="_blank" rel="noopener noreferrer">Request consultation</a>
             </div>
           </article>
+          </div>
+
+          <div class="featured-slider-controls" aria-label="Featured product slider controls">
+            <button
+              class="featured-slider-arrow"
+              type="button"
+              data-featured-prev
+              aria-label="Previous featured product"
+              title="Previous product"
+            >
+              &larr;
+            </button>
+            <div class="featured-slider-dots" aria-label="Choose featured product">
+              <button type="button" data-featured-dot="0" aria-label="Show Rejuran Healer" aria-current="true"></button>
+              <button type="button" data-featured-dot="1" aria-label="Show Vitaran Skin Booster offer"></button>
+              <button type="button" data-featured-dot="2" aria-label="Show Sculptra PLLA"></button>
+              <button type="button" data-featured-dot="3" aria-label="Show Aqualyx"></button>
+              <button type="button" data-featured-dot="4" aria-label="Show Luhilo"></button>
+            </div>
+            <button
+              class="featured-slider-arrow"
+              type="button"
+              data-featured-next
+              aria-label="Next featured product"
+              title="Next product"
+            >
+              &rarr;
+            </button>
+          </div>
         </div>
       </section>
 

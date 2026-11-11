@@ -182,6 +182,63 @@ if (heroSlides.length > 1) {
   startHeroSlider();
 }
 
+document.querySelectorAll("[data-featured-carousel]").forEach((carousel) => {
+  const slider = carousel.querySelector("[data-featured-slider]");
+  const cards = Array.from(slider?.querySelectorAll(".product-card") || []);
+  const previousButton = carousel.querySelector("[data-featured-prev]");
+  const nextButton = carousel.querySelector("[data-featured-next]");
+  const dots = Array.from(carousel.querySelectorAll("[data-featured-dot]"));
+
+  if (!slider || cards.length < 2) return;
+
+  let activeCard = 0;
+  let scrollFrame;
+
+  const setActiveCard = (nextCard) => {
+    activeCard = Math.max(0, Math.min(nextCard, cards.length - 1));
+    previousButton?.toggleAttribute("disabled", activeCard === 0);
+    nextButton?.toggleAttribute("disabled", activeCard === cards.length - 1);
+
+    dots.forEach((dot, index) => {
+      if (index === activeCard) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const scrollToCard = (index) => {
+    const nextCard = Math.max(0, Math.min(index, cards.length - 1));
+    slider.scrollTo({
+      left: cards[nextCard].offsetLeft,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth"
+    });
+    setActiveCard(nextCard);
+  };
+
+  const syncActiveCard = () => {
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(() => {
+      const closestCard = cards.reduce((closestIndex, card, index) => {
+        const currentDistance = Math.abs(card.offsetLeft - slider.scrollLeft);
+        const closestDistance = Math.abs(cards[closestIndex].offsetLeft - slider.scrollLeft);
+        return currentDistance < closestDistance ? index : closestIndex;
+      }, 0);
+      setActiveCard(closestCard);
+    });
+  };
+
+  previousButton?.addEventListener("click", () => scrollToCard(activeCard - 1));
+  nextButton?.addEventListener("click", () => scrollToCard(activeCard + 1));
+  dots.forEach((dot, index) => dot.addEventListener("click", () => scrollToCard(index)));
+  slider.addEventListener("scroll", syncActiveCard, { passive: true });
+  window.addEventListener("resize", syncActiveCard, { passive: true });
+  setActiveCard(0);
+});
+
 const rawCatalogue = {
   "Dermal Filler": [
     "Juvelook",
