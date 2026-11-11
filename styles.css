@@ -1243,7 +1243,7 @@ p {
   aspect-ratio: 4 / 3;
   place-items: center;
   padding: 0;
-  background: #000;
+  background: var(--teal-dark);
 }
 
 .about-brand-video {
@@ -1254,7 +1254,7 @@ p {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: #000;
+  background: var(--teal-dark);
 }
 
 .split-copy {
