@@ -3088,11 +3088,17 @@ body.has-offer-popup {
   }
 
   .hero::before {
-    inset: 158px 0 0;
+    inset: 108px 0 0;
     width: 100%;
-    background:
-      linear-gradient(90deg, rgba(0, 55, 52, 0.92), rgba(0, 55, 52, 0.56) 72%, rgba(0, 55, 52, 0.08)),
-      radial-gradient(circle at 18% 28%, rgba(255, 232, 166, 0.2), transparent 42%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 55, 52, 0) 0,
+      rgba(0, 55, 52, 0.14) 36px,
+      rgba(0, 55, 52, 0.55) 96px,
+      rgba(0, 55, 52, 0.82) 156px,
+      rgba(0, 55, 52, 0.96) 240px,
+      rgba(0, 55, 52, 0.96) 100%
+    );
   }
 
   .hero-copy {
