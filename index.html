@@ -19,7 +19,7 @@
     />
     <meta property="og:url" content="https://www.sowenabeauty.com/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
+    <meta property="og:image" content="https://www.sowenabeauty.com/assets/sowena-company-building.webp" />
     <meta property="og:site_name" content="Sowena Beauty Global" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,10 +28,12 @@
       name="twitter:description"
       content="Korean aesthetic product sourcing, skincare solutions and wholesale partner support from Sowena Beauty Global."
     />
-    <meta name="twitter:image" content="https://www.sowenabeauty.com/assets/sowena-hero.png" />
+    <meta name="twitter:image" content="https://www.sowenabeauty.com/assets/sowena-company-building.webp" />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=featured-mobile-slider-20261111" />
+    <link rel="preload" as="image" href="./assets/sowena-company-building.webp" media="(min-width: 621px)" />
+    <link rel="preload" as="image" href="./assets/sowena-company-building-mobile.webp" media="(max-width: 620px)" />
+    <link rel="stylesheet" href="./styles.css?v=company-building-20261113" />
     <script src="./script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -330,20 +332,19 @@
       </section>
 
       <section id="about" class="split-section">
-        <div class="image-panel logo-panel about-video-panel">
-          <video
-            class="about-brand-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-            poster="./assets/sowena-logo-transparent.png"
-            aria-label="Sowena Beauty brand outro animation"
-          >
-            <source src="./assets/media/sowena-outro.mp4" type="video/mp4" />
-          </video>
-        </div>
+        <figure class="image-panel about-company-panel reveal">
+          <picture>
+            <source media="(max-width: 620px)" srcset="./assets/sowena-company-building-mobile.webp" />
+            <img
+              src="./assets/sowena-company-building.webp"
+              alt="Sowena Beauty company building illuminated in teal and gold at dusk"
+              loading="lazy"
+              width="1570"
+              height="1002"
+            />
+          </picture>
+          <figcaption>Sowena Beauty Global</figcaption>
+        </figure>
         <div class="split-copy">
           <p class="eyebrow">About Sowena</p>
           <h2>A teal and gold identity for a premium aesthetic brand</h2>
