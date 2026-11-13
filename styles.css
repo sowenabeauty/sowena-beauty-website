@@ -3075,8 +3075,16 @@ body.has-offer-popup {
     min-height: auto;
     padding: 168px 16px 64px;
     background:
-      linear-gradient(90deg, rgba(0, 31, 29, 0.5), rgba(0, 55, 52, 0.18)),
-      url("./assets/sowena-company-building-mobile.webp") 56% center / cover no-repeat;
+      linear-gradient(
+        180deg,
+        rgba(0, 31, 29, 0.14) 0,
+        rgba(0, 55, 52, 0.18) 26%,
+        rgba(0, 55, 52, 0.76) 42%,
+        #003734 58%,
+        #062624 100%
+      ),
+      url("./assets/sowena-company-building-mobile.webp") center 108px / 100% auto no-repeat,
+      linear-gradient(135deg, #003734 0%, #005b56 54%, #062624 100%);
   }
 
   .hero::before {
