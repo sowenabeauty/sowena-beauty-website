@@ -18,10 +18,8 @@ if (!document.querySelector('script[data-sowena-google-analytics]')) {
   document.head.appendChild(googleAnalyticsScript);
 }
 
-const christmasSeasonEndsAt = Date.UTC(2027, 0, 6, 0, 0, 0);
-
 const createChristmasDecor = () => {
-  if (Date.now() > christmasSeasonEndsAt || document.querySelector("[data-christmas-snowfall]")) return;
+  if (document.querySelector("[data-christmas-snowfall]")) return;
 
   const snowflakes = [
     [6, 0, 18, 8],
