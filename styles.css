@@ -30,6 +30,45 @@ body {
   background: #fffef9;
 }
 
+.christmas-snowfall {
+  position: fixed;
+  inset: 0;
+  z-index: 24;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.christmas-snowfall span {
+  position: absolute;
+  top: -28px;
+  left: var(--snow-left);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--snow-size);
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(255, 232, 166, 0.52);
+  animation: christmasSnowFall var(--snow-duration) linear var(--snow-delay) infinite;
+}
+
+@keyframes christmasSnowFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -4vh, 0) rotate(0deg);
+  }
+
+  10% {
+    opacity: 0.72;
+  }
+
+  82% {
+    opacity: 0.48;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--snow-drift), 106vh, 0) rotate(300deg);
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -72,6 +111,31 @@ a {
   transform: translateX(-50%);
   backdrop-filter: blur(18px);
   transition: padding 240ms ease, background 240ms ease, box-shadow 240ms ease, transform 240ms ease;
+}
+
+.christmas-season .site-header {
+  border-color: rgba(255, 232, 166, 0.58);
+  box-shadow:
+    0 18px 54px rgba(0, 55, 52, 0.44),
+    0 0 0 1px rgba(255, 232, 166, 0.12) inset,
+    0 0 28px rgba(166, 31, 48, 0.14);
+}
+
+.christmas-season .site-header::after {
+  position: absolute;
+  right: 18px;
+  bottom: -5px;
+  left: 18px;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #a61f30 0 44px,
+    #e7bd58 44px 88px,
+    #176844 88px 132px
+  );
+  content: "";
+  opacity: 0.86;
 }
 
 .site-header.is-scrolled {
@@ -698,6 +762,37 @@ a {
   font-weight: 800;
   background: rgba(0, 55, 52, 0.42);
   backdrop-filter: blur(14px);
+}
+
+.christmas-hero-kicker {
+  display: none;
+}
+
+.christmas-season .christmas-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 232, 166, 0.58);
+  border-radius: 5px;
+  color: #fff8df;
+  background: rgba(148, 25, 43, 0.82);
+  box-shadow: 0 12px 28px rgba(75, 9, 18, 0.22);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.christmas-season .christmas-hero-kicker span {
+  color: var(--gold-light);
+  font-size: 13px;
+}
+
+.christmas-season .hero-badge {
+  border-color: rgba(255, 232, 166, 0.38);
 }
 
 .hero-badge span {
@@ -2146,6 +2241,39 @@ body.has-offer-popup {
   transition: transform 220ms ease;
 }
 
+.offer-popup__panel--christmas {
+  width: min(100%, 560px);
+  max-height: calc(100svh - 40px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-color: rgba(255, 232, 166, 0.58);
+  background:
+    linear-gradient(128deg, rgba(156, 29, 45, 0.2), transparent 42%),
+    linear-gradient(145deg, #07453e 0%, #05322e 48%, #031b19 100%);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.44),
+    0 0 0 1px rgba(255, 232, 166, 0.08) inset;
+}
+
+.offer-popup__panel--christmas::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #a61f30 0 28%, #e7bd58 28% 72%, #176844 72% 100%);
+  content: "";
+}
+
+.offer-popup__season-mark {
+  position: absolute;
+  top: 22px;
+  right: 62px;
+  color: rgba(255, 232, 166, 0.78);
+  font-size: 15px;
+  letter-spacing: 6px;
+}
+
 .offer-popup.is-visible .offer-popup__panel {
   transform: translateY(0) scale(1);
 }
@@ -2178,6 +2306,12 @@ body.has-offer-popup {
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
 }
 
+.offer-popup__panel--christmas .offer-popup__badge {
+  border: 1px solid rgba(255, 232, 166, 0.42);
+  color: #fff8df;
+  background: #962338;
+}
+
 .offer-popup h2 {
   margin: 18px 40px 12px 0;
   color: #fff;
@@ -2185,11 +2319,33 @@ body.has-offer-popup {
   line-height: 0.94;
 }
 
+.offer-popup__panel--christmas h2 {
+  color: var(--gold-light);
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
 .offer-popup p {
   max-width: 430px;
   color: rgba(255, 255, 255, 0.78);
   font-size: 16px;
   line-height: 1.65;
+}
+
+.offer-popup__perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+
+.offer-popup__perks span {
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 232, 166, 0.28);
+  border-radius: 4px;
+  color: #fff8df;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .offer-popup__code {
@@ -2202,6 +2358,11 @@ body.has-offer-popup {
   border: 1px dashed rgba(255, 226, 138, 0.58);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.offer-popup__panel--christmas .offer-popup__code {
+  border-color: rgba(255, 232, 166, 0.66);
+  background: rgba(124, 18, 34, 0.28);
 }
 
 .offer-popup__code span {
@@ -2232,6 +2393,12 @@ body.has-offer-popup {
 .offer-popup__actions .button {
   flex: 1 1 190px;
   min-height: 48px;
+}
+
+.offer-popup__panel--christmas .offer-popup__actions .primary {
+  color: #062624;
+  background: linear-gradient(135deg, #fff0b8, #e7bd58);
+  box-shadow: 0 12px 30px rgba(231, 189, 88, 0.18);
 }
 
 .contact-box {
@@ -3475,6 +3642,83 @@ body.has-offer-popup {
 @media (max-width: 360px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .christmas-snowfall span:nth-child(n + 9) {
+    display: none;
+  }
+
+  .christmas-season .site-header::after {
+    right: 10px;
+    left: 10px;
+  }
+
+  .christmas-season .christmas-hero-kicker {
+    margin-bottom: 10px;
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .offer-popup__panel--christmas {
+    max-height: calc(100svh - 24px);
+    padding: 18px;
+  }
+
+  .offer-popup__season-mark {
+    top: 20px;
+    right: 52px;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .offer-popup__panel--christmas h2 {
+    margin-top: 14px;
+    font-size: clamp(34px, 11vw, 46px);
+    line-height: 0.98;
+  }
+
+  .offer-popup__panel--christmas p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .offer-popup__perks {
+    margin-top: 14px;
+  }
+
+  .offer-popup__perks span {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .offer-popup__code {
+    margin: 14px 0;
+    padding: 11px 12px;
+  }
+
+  .offer-popup__code strong {
+    font-size: 19px;
+  }
+
+  .offer-popup__deadline {
+    margin-bottom: 14px;
+  }
+
+  .offer-popup__actions {
+    gap: 8px;
+  }
+
+  .offer-popup__actions .button {
+    flex-basis: 100%;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-snowfall {
+    display: none;
   }
 }
 

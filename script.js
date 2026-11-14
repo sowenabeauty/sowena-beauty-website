@@ -18,6 +18,43 @@ if (!document.querySelector('script[data-sowena-google-analytics]')) {
   document.head.appendChild(googleAnalyticsScript);
 }
 
+const christmasSeasonEndsAt = Date.UTC(2027, 0, 6, 0, 0, 0);
+
+const createChristmasDecor = () => {
+  if (Date.now() > christmasSeasonEndsAt || document.querySelector("[data-christmas-snowfall]")) return;
+
+  document.body.classList.add("christmas-season");
+  const snowflakes = [
+    [4, 0, 13, 9],
+    [11, 3, 17, 11],
+    [18, 7, 14, 8],
+    [25, 1, 19, 12],
+    [32, 9, 15, 9],
+    [39, 4, 18, 10],
+    [47, 11, 14, 8],
+    [54, 2, 20, 11],
+    [61, 8, 16, 9],
+    [68, 5, 19, 12],
+    [75, 12, 15, 8],
+    [82, 3, 18, 10],
+    [89, 9, 14, 9],
+    [96, 1, 20, 11]
+  ];
+  const snowfall = document.createElement("div");
+  snowfall.className = "christmas-snowfall";
+  snowfall.dataset.christmasSnowfall = "true";
+  snowfall.setAttribute("aria-hidden", "true");
+  snowfall.innerHTML = snowflakes
+    .map(
+      ([left, delay, duration, size], index) =>
+        `<span style="--snow-left:${left}%;--snow-delay:-${delay}s;--snow-duration:${duration}s;--snow-size:${size}px;--snow-drift:${index % 2 ? 34 : -28}px">&#10052;</span>`
+    )
+    .join("");
+  document.body.appendChild(snowfall);
+};
+
+createChristmasDecor();
+
 const header = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll(".reveal");
 const heroSlides = document.querySelectorAll(".hero-slide");
@@ -1067,26 +1104,19 @@ if (grid) {
 }
 
 const offerConfig = {
-  code: "SOWENA10",
+  code: "SOWENAXMAS",
   phone: "84961751956",
-  validDays: 30,
-  minimumProducts: 10,
-  minimumOrderValue: 1000
+  validUntil: Date.UTC(2026, 11, 26, 0, 0, 0),
+  validUntilLabel: "Dec 25, 2026",
+  claimedStorageKey: "sowenaChristmasOfferClaimedUntil2026"
 };
 
-const getOfferDeadline = () => {
-  const deadline = new Date(Date.now() + offerConfig.validDays * 24 * 60 * 60 * 1000);
-  return deadline.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  });
-};
+const getOfferDeadline = () => offerConfig.validUntilLabel;
 
 const getOfferMessage = (deadline) =>
-  `Hello Sowena Beauty, I would like to receive the ${offerConfig.code} discount code. I understand the offer is valid until ${deadline} and applies to orders of ${offerConfig.minimumProducts}+ products or orders over $${offerConfig.minimumOrderValue}.`;
+  `Hello Sowena Beauty, I would like to join the Christmas Mega Sale using code ${offerConfig.code}. Please share the seasonal wholesale pricing and bundle offers available for my product list. I understand the campaign is available until ${deadline}.`;
 
-const getOfferClaimedUntil = () => Number(window.localStorage.getItem("sowenaOfferClaimedUntil") || 0);
+const getOfferClaimedUntil = () => Number(window.localStorage.getItem(offerConfig.claimedStorageKey) || 0);
 
 const hasActiveOfferClaim = () => getOfferClaimedUntil() > Date.now();
 
@@ -1101,25 +1131,30 @@ const createOfferPopup = () => {
     `
       <div class="offer-popup" data-offer-popup role="dialog" aria-modal="true" aria-labelledby="offer-popup-title" aria-hidden="true">
         <div class="offer-popup__backdrop" data-offer-close></div>
-        <div class="offer-popup__panel">
+        <div class="offer-popup__panel offer-popup__panel--christmas">
           <button class="offer-popup__close" type="button" data-offer-close aria-label="Close offer">x</button>
-          <span class="offer-popup__badge">Limited website offer</span>
-          <h2 id="offer-popup-title">Get 10% off your quote</h2>
+          <div class="offer-popup__season-mark" aria-hidden="true">&#10022; &#10052; &#10022;</div>
+          <span class="offer-popup__badge">Sowena Christmas 2026</span>
+          <h2 id="offer-popup-title">Christmas Mega Sale</h2>
           <p>
-            Receive your discount code on WhatsApp. Valid for ${offerConfig.validDays}
-            days and applied to orders of ${offerConfig.minimumProducts}+ products
-            or orders over $${offerConfig.minimumOrderValue}.
+            Celebrate the season with special wholesale pricing, curated bundle offers
+            and priority quotation support. Final offers are confirmed by product and quantity.
           </p>
+          <div class="offer-popup__perks" aria-label="Christmas sale benefits">
+            <span>Seasonal bundle offers</span>
+            <span>Wholesale pricing</span>
+            <span>Priority quote support</span>
+          </div>
           <div class="offer-popup__code" aria-label="Discount code">
-            <span>Your code</span>
+            <span>Campaign code</span>
             <strong>${offerConfig.code}</strong>
           </div>
-          <p class="offer-popup__deadline">Valid until ${deadline}</p>
+          <p class="offer-popup__deadline">Christmas campaign available until ${deadline}</p>
           <div class="offer-popup__actions">
             <a class="button primary" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" data-offer-claim>
-              Receive on WhatsApp
+              Get Christmas quote
             </a>
-            <button class="button secondary" type="button" data-offer-close>Maybe later</button>
+            <button class="button secondary" type="button" data-offer-close>Explore later</button>
           </div>
         </div>
       </div>
@@ -1131,8 +1166,7 @@ const createOfferPopup = () => {
     control.addEventListener("click", () => hideOfferPopup());
   });
   popup.querySelector("[data-offer-claim]")?.addEventListener("click", () => {
-    const claimedUntil = Date.now() + offerConfig.validDays * 24 * 60 * 60 * 1000;
-    window.localStorage.setItem("sowenaOfferClaimedUntil", String(claimedUntil));
+    window.localStorage.setItem(offerConfig.claimedStorageKey, String(offerConfig.validUntil));
     hideOfferPopup();
   });
 
@@ -1140,7 +1174,7 @@ const createOfferPopup = () => {
 };
 
 const showOfferPopup = () => {
-  if (hasActiveOfferClaim()) return;
+  if (Date.now() > offerConfig.validUntil || hasActiveOfferClaim()) return;
   const popup = createOfferPopup();
   popup.classList.add("is-visible");
   popup.setAttribute("aria-hidden", "false");
@@ -1156,15 +1190,15 @@ const hideOfferPopup = () => {
 };
 
 const scheduleOfferPopup = () => {
-  if (hasActiveOfferClaim()) return;
+  if (Date.now() > offerConfig.validUntil || hasActiveOfferClaim()) return;
 
   const pageKey = window.location.pathname || "/";
-  const firstVisitKey = "sowenaOfferFirstVisit";
-  const reminderKey = `sowenaOfferReminder:${pageKey}`;
+  const firstVisitKey = "sowenaChristmasOfferFirstVisit2026";
+  const reminderKey = `sowenaChristmasOfferReminder2026:${pageKey}`;
 
   if (!window.sessionStorage.getItem(firstVisitKey)) {
     window.sessionStorage.setItem(firstVisitKey, "true");
-    window.setTimeout(showOfferPopup, 30000);
+    window.setTimeout(showOfferPopup, 8000);
     return;
   }
 
