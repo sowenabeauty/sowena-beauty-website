@@ -23,22 +23,16 @@ const christmasSeasonEndsAt = Date.UTC(2027, 0, 6, 0, 0, 0);
 const createChristmasDecor = () => {
   if (Date.now() > christmasSeasonEndsAt || document.querySelector("[data-christmas-snowfall]")) return;
 
-  document.body.classList.add("christmas-season");
   const snowflakes = [
-    [4, 0, 13, 9],
-    [11, 3, 17, 11],
-    [18, 7, 14, 8],
-    [25, 1, 19, 12],
-    [32, 9, 15, 9],
-    [39, 4, 18, 10],
-    [47, 11, 14, 8],
-    [54, 2, 20, 11],
-    [61, 8, 16, 9],
-    [68, 5, 19, 12],
-    [75, 12, 15, 8],
-    [82, 3, 18, 10],
-    [89, 9, 14, 9],
-    [96, 1, 20, 11]
+    [6, 0, 18, 8],
+    [17, 7, 22, 10],
+    [28, 3, 20, 7],
+    [40, 11, 24, 9],
+    [52, 5, 19, 8],
+    [64, 14, 23, 10],
+    [76, 2, 21, 7],
+    [87, 9, 25, 9],
+    [96, 4, 20, 8]
   ];
   const snowfall = document.createElement("div");
   snowfall.className = "christmas-snowfall";
@@ -47,7 +41,7 @@ const createChristmasDecor = () => {
   snowfall.innerHTML = snowflakes
     .map(
       ([left, delay, duration, size], index) =>
-        `<span style="--snow-left:${left}%;--snow-delay:-${delay}s;--snow-duration:${duration}s;--snow-size:${size}px;--snow-drift:${index % 2 ? 34 : -28}px">&#10052;</span>`
+        `<span style="--snow-left:${left}%;--snow-delay:-${delay}s;--snow-duration:${duration}s;--snow-size:${size}px;--snow-drift:${index % 2 ? 18 : -16}px">&#10052;</span>`
     )
     .join("");
   document.body.appendChild(snowfall);

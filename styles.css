@@ -42,10 +42,10 @@ body {
   position: absolute;
   top: -28px;
   left: var(--snow-left);
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.56);
   font-size: var(--snow-size);
   line-height: 1;
-  text-shadow: 0 0 10px rgba(255, 232, 166, 0.52);
+  text-shadow: 0 0 7px rgba(255, 255, 255, 0.24);
   animation: christmasSnowFall var(--snow-duration) linear var(--snow-delay) infinite;
 }
 
@@ -55,12 +55,12 @@ body {
     transform: translate3d(0, -4vh, 0) rotate(0deg);
   }
 
-  10% {
-    opacity: 0.72;
+  12% {
+    opacity: 0.42;
   }
 
-  82% {
-    opacity: 0.48;
+  84% {
+    opacity: 0.28;
   }
 
   100% {
@@ -111,31 +111,6 @@ a {
   transform: translateX(-50%);
   backdrop-filter: blur(18px);
   transition: padding 240ms ease, background 240ms ease, box-shadow 240ms ease, transform 240ms ease;
-}
-
-.christmas-season .site-header {
-  border-color: rgba(255, 232, 166, 0.58);
-  box-shadow:
-    0 18px 54px rgba(0, 55, 52, 0.44),
-    0 0 0 1px rgba(255, 232, 166, 0.12) inset,
-    0 0 28px rgba(166, 31, 48, 0.14);
-}
-
-.christmas-season .site-header::after {
-  position: absolute;
-  right: 18px;
-  bottom: -5px;
-  left: 18px;
-  height: 4px;
-  border-radius: 0 0 4px 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #a61f30 0 44px,
-    #e7bd58 44px 88px,
-    #176844 88px 132px
-  );
-  content: "";
-  opacity: 0.86;
 }
 
 .site-header.is-scrolled {
@@ -762,37 +737,6 @@ a {
   font-weight: 800;
   background: rgba(0, 55, 52, 0.42);
   backdrop-filter: blur(14px);
-}
-
-.christmas-hero-kicker {
-  display: none;
-}
-
-.christmas-season .christmas-hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-  padding: 7px 11px;
-  border: 1px solid rgba(255, 232, 166, 0.58);
-  border-radius: 5px;
-  color: #fff8df;
-  background: rgba(148, 25, 43, 0.82);
-  box-shadow: 0 12px 28px rgba(75, 9, 18, 0.22);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  backdrop-filter: blur(12px);
-}
-
-.christmas-season .christmas-hero-kicker span {
-  color: var(--gold-light);
-  font-size: 13px;
-}
-
-.christmas-season .hero-badge {
-  border-color: rgba(255, 232, 166, 0.38);
 }
 
 .hero-badge span {
@@ -3646,19 +3590,8 @@ body.has-offer-popup {
 }
 
 @media (max-width: 620px) {
-  .christmas-snowfall span:nth-child(n + 9) {
+  .christmas-snowfall span:nth-child(n + 7) {
     display: none;
-  }
-
-  .christmas-season .site-header::after {
-    right: 10px;
-    left: 10px;
-  }
-
-  .christmas-season .christmas-hero-kicker {
-    margin-bottom: 10px;
-    padding: 6px 9px;
-    font-size: 10px;
   }
 
   .offer-popup__panel--christmas {
